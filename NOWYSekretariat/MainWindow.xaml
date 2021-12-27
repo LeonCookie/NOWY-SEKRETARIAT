@@ -24,6 +24,33 @@
                         <ColumnDefinition Width="20*"/>
                         <ColumnDefinition Width="621*"/>
                     </Grid.ColumnDefinitions>
+                    <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="422,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1"/>
+                    
+                    <TextBox x:Name="textbox_uczen_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_uczen_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_uczen_nazwisko" HorizontalAlignment="Left" Margin="250,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_uczen_nazwiskoPanienskie" HorizontalAlignment="Left" Margin="250,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_uczen_ImieMatki" HorizontalAlignment="Left" Margin="250,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_uczen_ImieOjca" HorizontalAlignment="Left" Margin="250,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="250,172,0,0" VerticalAlignment="Top" Width="118" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_uczen_pesel" HorizontalAlignment="Left" Margin="250,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" MaxLength="11"    />
+                    <ComboBox x:Name="combobox_uczen_plec" HorizontalAlignment="Left" Margin="250,230,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1">
+                        <ComboBoxItem>Mężczyzna</ComboBoxItem>
+                        <ComboBoxItem>Kobieta</ComboBoxItem>
+                    </ComboBox>
+
+                    <ComboBox x:Name="combobox_uczen_klasa" HorizontalAlignment="Left" Margin="250,264,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,31,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,79,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,100,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,128,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,151,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,176,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,208,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,230,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,270,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Nauczyciel">
