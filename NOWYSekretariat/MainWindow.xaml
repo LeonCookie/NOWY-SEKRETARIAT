@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NOWYSekretariat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Database1DataSet x:Key="database1DataSet"/>
+        <CollectionViewSource x:Key="_Table_uczenViewSource" Source="{Binding _Table_uczen, Source={StaticResource database1DataSet}}"/>
+    </Window.Resources>
     <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
-        <TabControl HorizontalAlignment="Left" Height="374" Margin="37,10,0,0" VerticalAlignment="Top" Width="647">
+        <TabControl HorizontalAlignment="Left" Height="374" Margin="37,10,0,0" VerticalAlignment="Top" Width="755">
             <TabItem Header="Uczen">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -35,7 +39,13 @@
                         <GradientStop Color="#FFF5820E" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid Background="#FFF5820E"/>
+                <Grid Background="#FFF5820E" DataContext="{StaticResource _Table_uczenViewSource}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="731*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid HorizontalAlignment="Left" Height="198" Margin="10,10,0,0" VerticalAlignment="Top" Width="677" ItemsSource="{Binding}" IsReadOnly="True" Grid.ColumnSpan="2" SelectionChanged="DataGrid_SelectionChanged"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Dane-Nauczyciel">
                 <Grid Background="#FFE5E5E5"/>
