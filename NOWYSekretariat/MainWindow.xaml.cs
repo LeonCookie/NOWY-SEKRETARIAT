@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Configuration;
+using System;
+using System.Data;
 
 namespace NOWYSekretariat
 {
@@ -20,9 +12,27 @@ namespace NOWYSekretariat
     /// </summary>
     public partial class MainWindow : Window
     {
+      
         public MainWindow()
         {
             InitializeComponent();
+            binddatagrip();
+
+        }
+
+        private void binddatagrip()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Select  * from[Table-uczen]";
+            cmd.Connection = con;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable("Uczen");
+            da.Fill(dt);
+
+            g1.ItemsSource = dt.DefaultView;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -38,6 +48,24 @@ namespace NOWYSekretariat
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void buttonSend_Click(object sender, RoutedEventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Inser into[Table-uczen](Imie)values(@nm)";
+            cmd.Parameters.AddWithValue("@nm", textbox_uczen_imie.Text);
+            cmd.Connection = con;
+            int a = cmd.ExecuteNonQuery();
+            if(a==1)
+            {
+                MessageBox.Show("Data add ");
+                binddatagrip();
+            }
 
         }
 

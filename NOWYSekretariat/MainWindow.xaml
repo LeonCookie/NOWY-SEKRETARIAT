@@ -24,8 +24,8 @@
                         <ColumnDefinition Width="20*"/>
                         <ColumnDefinition Width="621*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="422,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1"/>
-                    
+                    <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="333,308,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1" Click="buttonSend_Click"/>
+
                     <TextBox x:Name="textbox_uczen_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <TextBox x:Name="textbox_uczen_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <TextBox x:Name="textbox_uczen_nazwisko" HorizontalAlignment="Left" Margin="250,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
@@ -33,23 +33,23 @@
                     <TextBox x:Name="textbox_uczen_ImieMatki" HorizontalAlignment="Left" Margin="250,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <TextBox x:Name="textbox_uczen_ImieOjca" HorizontalAlignment="Left" Margin="250,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <DatePicker HorizontalAlignment="Left" Margin="250,172,0,0" VerticalAlignment="Top" Width="118" Grid.Column="1"/>
-                    <TextBox x:Name="textbox_uczen_pesel" HorizontalAlignment="Left" Margin="250,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" MaxLength="11"    />
                     <ComboBox x:Name="combobox_uczen_plec" HorizontalAlignment="Left" Margin="250,230,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1">
                         <ComboBoxItem>Mężczyzna</ComboBoxItem>
                         <ComboBoxItem>Kobieta</ComboBoxItem>
                     </ComboBox>
 
                     <ComboBox x:Name="combobox_uczen_klasa" HorizontalAlignment="Left" Margin="250,264,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,31,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,79,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,100,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,128,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,151,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,176,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,208,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,230,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="148,270,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="78"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Drugie Imie"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Imie"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,79,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="93"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="18"><Run Text="Nazwisko Panienskie"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,128,0,0" TextWrapping="Wrap" Text="Imie Matki" VerticalAlignment="Top" Width="86"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Imie Ojca"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Data urodzenia"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Pesel"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Klasa"/><LineBreak/><Run/></TextBlock>
+                    <TextBox x:Name="textbox_uczen_Pesel" HorizontalAlignment="Left" Margin="250,201,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
 
                 </Grid>
             </TabItem>
@@ -71,7 +71,12 @@
                         <ColumnDefinition Width="18*"/>
                         <ColumnDefinition Width="731*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid HorizontalAlignment="Left" Height="198" Margin="10,10,0,0" VerticalAlignment="Top" Width="677" ItemsSource="{Binding}" IsReadOnly="True" Grid.ColumnSpan="2" SelectionChanged="DataGrid_SelectionChanged"/>
+                    <DataGrid  Name ="g1" Grid.Column="1" HorizontalAlignment="Left" Height="154" Margin="29,57,0,0" VerticalAlignment="Top" Width="526">
+                        <DataGrid.Columns>
+                            
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Dane-Nauczyciel">
