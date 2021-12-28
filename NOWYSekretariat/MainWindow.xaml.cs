@@ -20,6 +20,8 @@ namespace NOWYSekretariat
         {
             InitializeComponent();
             binddatagrip();
+            binddatagrip2();
+            binddatagrip3();
 
         }
 
@@ -36,6 +38,38 @@ namespace NOWYSekretariat
             da.Fill(dt);
 
             g1.ItemsSource = dt.DefaultView;
+
+            con.Close();
+        }
+        private void binddatagrip2()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Select  * from[Table-uczen]";
+            cmd.Connection = con;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable("Table-uczen");
+            da.Fill(dt);
+
+            g2.ItemsSource = dt.DefaultView;
+
+            con.Close();
+        }
+        private void binddatagrip3()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Select  * from[Table-uczen]";
+            cmd.Connection = con;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable("Table-uczen");
+            da.Fill(dt);
+
+            g3.ItemsSource = dt.DefaultView;
 
             con.Close();
         }

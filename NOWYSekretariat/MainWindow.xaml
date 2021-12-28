@@ -84,7 +84,13 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Nauczyciel">
-                <Grid Background="#FFE5E5E5"/>
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF0719FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FF0719FF"/>
             </TabItem>
             <TabItem Header="Pracownik">
                 <Grid Background="#FFE5E5E5"/>
@@ -102,7 +108,7 @@
                         <ColumnDefinition Width="14*"/>
                         <ColumnDefinition Width="909*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid  Name ="g1" Grid.Column="2" HorizontalAlignment="Left" Height="333" Margin="29,57,0,0" VerticalAlignment="Top" Width="853" IsReadOnly="True">
+                    <DataGrid  Name ="g1" Grid.Column="2" HorizontalAlignment="Left" Height="333" Margin="34,29,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True">
                         <DataGrid.Columns>
 
                         </DataGrid.Columns>
@@ -111,10 +117,44 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Dane-Nauczyciel">
-                <Grid Background="#FFE5E5E5"/>
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF0719FF" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FF0719FF">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="201*"/>
+                        <ColumnDefinition Width="730*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="g2" HorizontalAlignment="Left" Height="333" Margin="52,36,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </Grid>
             </TabItem>
             <TabItem Header="Dane-Pracownik">
-                <Grid Background="#FFE5E5E5"/>
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF07FF19" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FF07FF19">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="402*"/>
+                        <ColumnDefinition Width="516*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid   Name="g3" Grid.Column="1" HorizontalAlignment="Left" Height="333" Margin="32,23,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
