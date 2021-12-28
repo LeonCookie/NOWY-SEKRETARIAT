@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Configuration;
 using System;
 using System.Data;
+using System.Windows.Input;
 
 namespace NOWYSekretariat
 {
@@ -29,10 +30,11 @@ namespace NOWYSekretariat
             cmd.CommandText = "Select  * from[Table-uczen]";
             cmd.Connection = con;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Uczen");
+            DataTable dt = new DataTable("Table-uczen");
             da.Fill(dt);
 
             g1.ItemsSource = dt.DefaultView;
+            con.Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -68,6 +70,58 @@ namespace NOWYSekretariat
             }
 
         }
+
+        private void textbox_uczen_imie_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e) //tylko litery w textbox imie
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown||shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+
+        }
+
+        private void textbox_uczen_Pesel_PreviewKeyDown(object sender, KeyEventArgs e) //tylko liczby w peselu
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            
+
+            if (isNumber || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown)
+            {
+                e.Handled = false;
+                
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko cyfry");
+            }
+                
+        }
+
+
 
         //
     }
