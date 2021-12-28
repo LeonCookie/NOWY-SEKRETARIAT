@@ -55,19 +55,29 @@ namespace NOWYSekretariat
 
         private void buttonSend_Click(object sender, RoutedEventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
-            con.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "Inser into[Table-uczen](Imie)values(@nm)";
-            cmd.Parameters.AddWithValue("@nm", textbox_uczen_imie.Text);
-            cmd.Connection = con;
-            int a = cmd.ExecuteNonQuery();
-            if(a==1)
+            if(!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text )&& textbox_uczen_Pesel.Text.Length ==  11) //wymagane pola nie sa puste
             {
-                MessageBox.Show("Data add ");
-                binddatagrip();
+                /*
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "Inser into[Table-uczen](Imie)values(@nm)";
+                cmd.Parameters.AddWithValue("@nm", textbox_uczen_imie.Text);
+                cmd.Connection = con;
+                int a = cmd.ExecuteNonQuery();
+                if (a == 1)
+                {
+                    MessageBox.Show("Data add ");
+                    binddatagrip();
+                }
+                */
             }
+            else
+            {
+                MessageBox.Show("Uzupełnij wymagane pola: Imie,Nazwisko,Pesel(musi posiadac 11 cyfr),Klasa");
+            }
+            
 
         }
 
@@ -239,6 +249,11 @@ namespace NOWYSekretariat
                 e.Handled = true;
                 MessageBox.Show("Tylko litery");
             }
+        }
+
+        private void textbox_uczen_Pesel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
 
 

@@ -38,7 +38,25 @@
                         <ComboBoxItem>Kobieta</ComboBoxItem>
                     </ComboBox>
 
-                    <ComboBox x:Name="combobox_uczen_klasa" HorizontalAlignment="Left" Margin="250,264,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1"/>
+                    <ComboBox x:Name="combobox_uczen_klasa" HorizontalAlignment="Left" Margin="250,264,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
+                        <ComboBoxItem>1-El</ComboBoxItem>
+                        <ComboBoxItem>1-Pr</ComboBoxItem>
+                        <ComboBoxItem>1-Mech</ComboBoxItem>
+                        <ComboBoxItem>1-Chlod</ComboBoxItem>
+                        <ComboBoxItem>2-El</ComboBoxItem>
+                        <ComboBoxItem>2-Pr</ComboBoxItem>
+                        <ComboBoxItem>2-Mech</ComboBoxItem>
+                        <ComboBoxItem>2-Chlod</ComboBoxItem>
+                        <ComboBoxItem>3-El</ComboBoxItem>
+                        <ComboBoxItem>3-Pr</ComboBoxItem>
+                        <ComboBoxItem>3-Mech</ComboBoxItem>
+                        <ComboBoxItem>3-Chlod</ComboBoxItem>
+                        <ComboBoxItem>4-El</ComboBoxItem>
+                        <ComboBoxItem>4-Pr</ComboBoxItem>
+                        <ComboBoxItem>4-Mech</ComboBoxItem>
+                        <ComboBoxItem>4-Chlod</ComboBoxItem>
+                        
+                    </ComboBox>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Drugie Imie"/><LineBreak/><Run/></TextBlock>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Imie"/><LineBreak/><Run/></TextBlock>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,79,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="93"/>
@@ -49,7 +67,7 @@
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Pesel"/><LineBreak/><Run/></TextBlock>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Klasa"/><LineBreak/><Run/></TextBlock>
-                    <TextBox x:Name="textbox_uczen_Pesel" HorizontalAlignment="Left" Margin="250,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown"/>
+                    <TextBox x:Name="textbox_uczen_Pesel" HorizontalAlignment="Left" Margin="250,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown" TextChanged="textbox_uczen_Pesel_TextChanged"/>
 
                 </Grid>
             </TabItem>
