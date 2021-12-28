@@ -20,9 +20,9 @@ namespace NOWYSekretariat {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Database1DataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dbUczen")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Database1DataSet : global::System.Data.DataSet {
+    public partial class dbUczen : global::System.Data.DataSet {
         
         private _Table_uczenDataTable _tableTable_uczen;
         
@@ -30,7 +30,7 @@ namespace NOWYSekretariat {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public Database1DataSet() {
+        public dbUczen() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace NOWYSekretariat {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected Database1DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dbUczen(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace NOWYSekretariat {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Database1DataSet cln = ((Database1DataSet)(base.Clone()));
+            dbUczen cln = ((dbUczen)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace NOWYSekretariat {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Database1DataSet";
+            this.DataSetName = "dbUczen";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Database1DataSet.xsd";
+            this.Namespace = "http://tempuri.org/dbUczen.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this._tableTable_uczen = new _Table_uczenDataTable();
@@ -225,7 +225,7 @@ namespace NOWYSekretariat {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Database1DataSet ds = new Database1DataSet();
+            dbUczen ds = new dbUczen();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -645,7 +645,7 @@ namespace NOWYSekretariat {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet ds = new Database1DataSet();
+                dbUczen ds = new dbUczen();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -988,7 +988,7 @@ namespace NOWYSekretariat {
         }
     }
 }
-namespace NOWYSekretariat.Database1DataSetTableAdapters {
+namespace NOWYSekretariat.dbUczenTableAdapters {
     
     
     /// <summary>
@@ -1222,7 +1222,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet._Table_uczenDataTable dataTable) {
+        public virtual int Fill(dbUczen._Table_uczenDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1235,9 +1235,9 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet._Table_uczenDataTable GetData() {
+        public virtual dbUczen._Table_uczenDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet._Table_uczenDataTable dataTable = new Database1DataSet._Table_uczenDataTable();
+            dbUczen._Table_uczenDataTable dataTable = new dbUczen._Table_uczenDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1245,14 +1245,14 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet._Table_uczenDataTable dataTable) {
+        public virtual int Update(dbUczen._Table_uczenDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet dataSet) {
+        public virtual int Update(dbUczen dataSet) {
             return this.Adapter.Update(dataSet, "Table-uczen");
         }
         
@@ -1752,7 +1752,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dbUczen dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._table_uczenTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet._Table_uczen.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1771,7 +1771,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dbUczen dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._table_uczenTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet._Table_uczen.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1789,7 +1789,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dbUczen dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._table_uczenTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet._Table_uczen.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1831,7 +1831,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(Database1DataSet dataSet) {
+        public virtual int UpdateAll(dbUczen dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

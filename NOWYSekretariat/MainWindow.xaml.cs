@@ -15,7 +15,7 @@ namespace NOWYSekretariat
     public partial class MainWindow : Window
     {
 
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace NOWYSekretariat
             da.Fill(dt);
 
             g1.ItemsSource = dt.DefaultView;
-            
+
             con.Close();
         }
 
@@ -50,8 +50,8 @@ namespace NOWYSekretariat
             System.Windows.Data.CollectionViewSource _Table_uczenViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("_Table_uczenViewSource")));
             _Table_uczenViewSource.View.MoveCurrentToFirst();
         }
-        
-         
+
+
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -59,34 +59,48 @@ namespace NOWYSekretariat
 
         private void buttonSend_Click(object sender, RoutedEventArgs e)
         {
-          
-                
-            if(!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text )&& textbox_uczen_Pesel.Text.Length ==  11) //wymagane pola nie sa puste
+
+
+            if (!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text) && textbox_uczen_Pesel.Text.Length == 11) //wymagane pola nie sa puste
             {
 
 
                 /*  SqlCommand cmd = new SqlCommand();
-                  cmd.CommandText = "INSERT INTO Table-uczen(Imie,Drugie Imie, Nazwisko, Nazwisko Panienskie, Imie Matki, Imie Ojca, Data urodzenia,Pesel,Plec,Klasa, Grupa) VALUES (@Imie,@DrugieImie,@Nazwisko,@NazwiskoPanienskie,@ImieMatki,@ImieOjca,@Dataurodzenia,@Pesel,@Plec,@Klasa,@Grupa)";
-
-                  cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
-                  cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
-                  cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
-                  cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
-                  cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
-                  cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
-                  cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
-                  cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
-                  cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
-                  cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
+                 cmd.CommandText = "insert into [Table-uczen](Imie,DrugieImie,Nazwisko,NazwiskoPanienskie,ImieMatki,ImieOjca,DataUrodzenia,Pesel,Plec,Klasa, Grupa) values(@Imie,@DrugieImie,@Nazwisko,@NazwiskoPanienskie,@ImieMatki,@ImieOjca,@Pesel,@Klasa,@Grupa)";
+                cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
+                cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
+                cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
+                cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
+                cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
+                cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
+                cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
+                cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
+                cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
+                cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
                 */
-                SqlConnection con = new SqlConnection("NOWYSekretariat.Properties.Settings.dbUczenConnection");
-                con.Open(); 
-                SqlCommand cmd = new SqlCommand("insert into Table-uczen(Imie,Drugie Imie, Nazwisko, Nazwisko Panienskie, Imie Matki, Imie Ojca, Data urodzenia,Pesel,Plec,Klasa, Grupa) values('"+textbox_uczen_imie.Text+ "','" + textbox_uczen_drugieImie.Text +"','" + textbox_uczen_nazwisko.Text + "','" + textbox_uczen_nazwiskoPanienskie.Text + "','" + textbox_uczen_ImieMatki.Text + "','" + textbox_uczen_ImieOjca.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_grupa.Text + "')",con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
+                /* string connectionstring = "NOWYSekretariat.Properties.Settings.dbUczenConnection";
+                 SqlConnection con = new SqlConnection(connectionstring);
+                 con.Open(); 
+                 SqlCommand cmd = new SqlCommand("insert into Table-uczen(Imie,Drugie Imie, Nazwisko, Nazwisko Panienskie, Imie Matki, Imie Ojca, Data urodzenia,Pesel,Plec,Klasa, Grupa) values('"+textbox_uczen_imie.Text+ "','" + textbox_uczen_drugieImie.Text +"','" + textbox_uczen_nazwisko.Text + "','" + textbox_uczen_nazwiskoPanienskie.Text + "','" + textbox_uczen_ImieMatki.Text + "','" + textbox_uczen_ImieOjca.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_grupa.Text + "')",con);
+                 SqlDataAdapter da = new SqlDataAdapter(cmd);
+                 DataSet ds = new DataSet();
+                 da.Fill(ds);
 
-                MessageBox.Show("Udalo się");
+                 MessageBox.Show("Udalo się");
+                */
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                
+                cmd.Connection = con;
+                int a = cmd.ExecuteNonQuery();
+                if (a == 1)
+                {
+                    MessageBox.Show("Data cos tam");
+                    binddatagrip();
+                }
 
 
 
@@ -100,17 +114,17 @@ namespace NOWYSekretariat
             {
                 MessageBox.Show("Uzupełnij wymagane pola: Imie,Nazwisko,Pesel(musi posiadac 11 cyfr),Klasa");
             }
-            
+
 
         }
-        
-            
-            
-                
-                    
 
 
-              
+
+
+
+
+
+
 
         private void textbox_uczen_imie_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e) //tylko litery w textbox imie
         {
@@ -123,7 +137,7 @@ namespace NOWYSekretariat
             bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
             bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
 
-            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown||shift)
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
             {
                 e.Handled = false;
 
@@ -146,12 +160,12 @@ namespace NOWYSekretariat
             bool isBack = e.Key == Key.Back;
             bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
             bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
-            
+
 
             if (isNumber || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown)
             {
                 e.Handled = false;
-                
+
             }
 
             else
@@ -159,7 +173,7 @@ namespace NOWYSekretariat
                 e.Handled = true;
                 MessageBox.Show("Tylko cyfry");
             }
-                
+
         }
 
         private void textbox_uczen_drugieImie_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -284,7 +298,7 @@ namespace NOWYSekretariat
 
         private void textbox_uczen_Pesel_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+
         }
 
 

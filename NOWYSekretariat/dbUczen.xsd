@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="Database1DataSet" targetNamespace="http://tempuri.org/Database1DataSet.xsd" xmlns:mstns="http://tempuri.org/Database1DataSet.xsd" xmlns="http://tempuri.org/Database1DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="dbUczen" targetNamespace="http://tempuri.org/dbUczen.xsd" xmlns:mstns="http://tempuri.org/dbUczen.xsd" xmlns="http://tempuri.org/dbUczen.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -121,7 +121,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Database1DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Database1DataSet" msprop:Generator_UserDSName="Database1DataSet">
+  <xs:element name="dbUczen" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbUczen" msprop:Generator_UserDSName="dbUczen">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Table-uczen" msprop:Generator_TableClassName="_Table_uczenDataTable" msprop:Generator_TableVarName="_tableTable_uczen" msprop:Generator_TablePropName="_Table_uczen" msprop:Generator_RowDeletingName="_Table_uczenRowDeleting" msprop:Generator_RowChangingName="_Table_uczenRowChanging" msprop:Generator_RowEvHandlerName="_Table_uczenRowChangeEventHandler" msprop:Generator_RowDeletedName="_Table_uczenRowDeleted" msprop:Generator_UserTableName="Table-uczen" msprop:Generator_RowChangedName="_Table_uczenRowChanged" msprop:Generator_RowEvArgName="_Table_uczenRowChangeEvent" msprop:Generator_RowClassName="_Table_uczenRow">
