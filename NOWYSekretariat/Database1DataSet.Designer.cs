@@ -574,7 +574,6 @@ namespace NOWYSekretariat {
                 this.columnPlec.MaxLength = 50;
                 this.columnKlasa.AllowDBNull = false;
                 this.columnKlasa.MaxLength = 50;
-                this.columnGrupa.AllowDBNull = false;
                 this.columnGrupa.MaxLength = 50;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_tableTable_uczen");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Table-uczen");
@@ -873,7 +872,12 @@ namespace NOWYSekretariat {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Grupa {
                 get {
-                    return ((string)(this[this._tableTable_uczen.GrupaColumn]));
+                    try {
+                        return ((string)(this[this._tableTable_uczen.GrupaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Grupa\' w tabeli \'Table-uczen\' to DBNull.", e);
+                    }
                 }
                 set {
                     this[this._tableTable_uczen.GrupaColumn] = value;
@@ -950,6 +954,18 @@ namespace NOWYSekretariat {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPlecNull() {
                 this[this._tableTable_uczen.PlecColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsGrupaNull() {
+                return this.IsNull(this._tableTable_uczen.GrupaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetGrupaNull() {
+                this[this._tableTable_uczen.GrupaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1345,7 +1361,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
                 this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Klasa));
             }
             if ((Original_Grupa == null)) {
-                throw new global::System.ArgumentNullException("Original_Grupa");
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_Grupa));
@@ -1427,7 +1443,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Klasa));
             }
             if ((Grupa == null)) {
-                throw new global::System.ArgumentNullException("Grupa");
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Grupa));
@@ -1533,7 +1549,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Klasa));
             }
             if ((Grupa == null)) {
-                throw new global::System.ArgumentNullException("Grupa");
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Grupa));
@@ -1607,7 +1623,7 @@ SELECT Id, Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, 
                 this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Klasa));
             }
             if ((Original_Grupa == null)) {
-                throw new global::System.ArgumentNullException("Original_Grupa");
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Grupa));

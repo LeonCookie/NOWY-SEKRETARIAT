@@ -81,7 +81,7 @@ namespace NOWYSekretariat
                 /* string connectionstring = "NOWYSekretariat.Properties.Settings.dbUczenConnection";
                  SqlConnection con = new SqlConnection(connectionstring);
                  con.Open(); 
-                 SqlCommand cmd = new SqlCommand("insert into Table-uczen(Imie,Drugie Imie, Nazwisko, Nazwisko Panienskie, Imie Matki, Imie Ojca, Data urodzenia,Pesel,Plec,Klasa, Grupa) values('"+textbox_uczen_imie.Text+ "','" + textbox_uczen_drugieImie.Text +"','" + textbox_uczen_nazwisko.Text + "','" + textbox_uczen_nazwiskoPanienskie.Text + "','" + textbox_uczen_ImieMatki.Text + "','" + textbox_uczen_ImieOjca.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_grupa.Text + "')",con);
+                 SqlCommand cmd = new SqlCommand("insert into Table-uczen(Imie,Drugie Imie,Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, DataUrodzenia,Pesel,Plec,Klasa, Grupa) values('"+textbox_uczen_imie.Text+ "','" + textbox_uczen_drugieImie.Text +"','" + textbox_uczen_nazwisko.Text + "','" + textbox_uczen_nazwiskoPanienskie.Text + "','" + textbox_uczen_ImieMatki.Text + "','" + textbox_uczen_ImieOjca.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_grupa.Text + "')",con);
                  SqlDataAdapter da = new SqlDataAdapter(cmd);
                  DataSet ds = new DataSet();
                  da.Fill(ds);
@@ -93,7 +93,42 @@ namespace NOWYSekretariat
                 con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "insert into [Table-uczen](Imie)values(@Imie)";
+                cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](DrugieImie)values(@DrugieImie)";
+                cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](Nazwisko)values(@Nazwisko)";
+                cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](NazwiskoPanienskie)values(@NazwiskoPanienskie)";
+                cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](ImieMatki)values(@ImieMatki)";
+                cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](ImieOjca)values(@ImieOjca)";
+                cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
+
+                cmd.CommandText = "insert into [Table-uczen]( DataUrodzenia)values(@DataUrodzenia)";
+                cmd.Parameters.AddWithValue("@DataUrodzenia", data_urodzenia.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](Pesel)values(@Pesel)";
+                cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](Plec)values(@Plec)";
+                cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](Klasa)values(@Klasa)";
+                cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
+
+                cmd.CommandText = "insert into [Table-uczen](Grupa)values(@Grupa)";
+                cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
+
                 
+
+
                 cmd.Connection = con;
                 int a = cmd.ExecuteNonQuery();
                 if (a == 1)

@@ -10,8 +10,8 @@
         <local:Database1DataSet x:Key="database1DataSet"/>
         <CollectionViewSource x:Key="_Table_uczenViewSource" Source="{Binding _Table_uczen, Source={StaticResource database1DataSet}}"/>
     </Window.Resources>
-    <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
-        <TabControl HorizontalAlignment="Left" Height="399" Margin="37,10,0,0" VerticalAlignment="Top" Width="755">
+    <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Margin="0,0,2,0">
+        <TabControl HorizontalAlignment="Left" Height="908" Margin="37,10,-184,-499" VerticalAlignment="Top" Width="937">
             <TabItem Header="Uczen">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -32,7 +32,7 @@
                     <TextBox x:Name="textbox_uczen_nazwiskoPanienskie" HorizontalAlignment="Left" Margin="250,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_nazwiskoPanienskie_PreviewKeyDown"/>
                     <TextBox x:Name="textbox_uczen_ImieMatki" HorizontalAlignment="Left" Margin="250,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_ImieMatki_PreviewKeyDown"/>
                     <TextBox x:Name="textbox_uczen_ImieOjca" HorizontalAlignment="Left" Margin="250,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_ImieOjca_PreviewKeyDown"/>
-                    <DatePicker HorizontalAlignment="Left" Margin="250,172,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1"/>
+                    <DatePicker x:Name="data_urodzenia" HorizontalAlignment="Left" Margin="250,172,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1"/>
                     <ComboBox x:Name="combobox_uczen_plec" HorizontalAlignment="Left" Margin="250,230,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
                         <ComboBoxItem>Mężczyzna</ComboBoxItem>
                         <ComboBoxItem>Kobieta</ComboBoxItem>
@@ -79,14 +79,7 @@
 
 
                     </ComboBox>
-                    <ComboBox x:Name="combobox_uczen_grupa_Copy" HorizontalAlignment="Left" Margin="250,291,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
-                        <ComboBoxItem Content="Hiszpanski"/>
-                        <ComboBoxItem Content="Niemiecki"/>
-                        <ComboBoxItem Content="Angielski"/>
 
-
-
-                    </ComboBox>
 
                 </Grid>
             </TabItem>
@@ -105,10 +98,11 @@
                 </TabItem.Background>
                 <Grid Background="#FFF5820E" DataContext="{StaticResource _Table_uczenViewSource}">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="18*"/>
-                        <ColumnDefinition Width="731*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="14*"/>
+                        <ColumnDefinition Width="909*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid  Name ="g1" Grid.Column="1" HorizontalAlignment="Left" Height="154" Margin="29,57,0,0" VerticalAlignment="Top" Width="526">
+                    <DataGrid  Name ="g1" Grid.Column="2" HorizontalAlignment="Left" Height="333" Margin="29,57,0,0" VerticalAlignment="Top" Width="853" IsReadOnly="True">
                         <DataGrid.Columns>
 
                         </DataGrid.Columns>
