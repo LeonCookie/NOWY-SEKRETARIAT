@@ -27,11 +27,11 @@
                     <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="333,308,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1" Click="buttonSend_Click"/>
 
                     <TextBox x:Name="textbox_uczen_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_imie_PreviewKeyDown" />
-                    <TextBox x:Name="textbox_uczen_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" />
-                    <TextBox x:Name="textbox_uczen_nazwisko" HorizontalAlignment="Left" Margin="250,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" />
-                    <TextBox x:Name="textbox_uczen_nazwiskoPanienskie" HorizontalAlignment="Left" Margin="250,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1"/>
-                    <TextBox x:Name="textbox_uczen_ImieMatki" HorizontalAlignment="Left" Margin="250,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1"/>
-                    <TextBox x:Name="textbox_uczen_ImieOjca" HorizontalAlignment="Left" Margin="250,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_uczen_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_drugieImie_PreviewKeyDown" />
+                    <TextBox x:Name="textbox_uczen_nazwisko" HorizontalAlignment="Left" Margin="250,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_nazwisko_PreviewKeyDown" />
+                    <TextBox x:Name="textbox_uczen_nazwiskoPanienskie" HorizontalAlignment="Left" Margin="250,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_nazwiskoPanienskie_PreviewKeyDown"/>
+                    <TextBox x:Name="textbox_uczen_ImieMatki" HorizontalAlignment="Left" Margin="250,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_ImieMatki_PreviewKeyDown"/>
+                    <TextBox x:Name="textbox_uczen_ImieOjca" HorizontalAlignment="Left" Margin="250,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_ImieOjca_PreviewKeyDown"/>
                     <DatePicker HorizontalAlignment="Left" Margin="250,172,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1"/>
                     <ComboBox x:Name="combobox_uczen_plec" HorizontalAlignment="Left" Margin="250,230,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
                         <ComboBoxItem>Mężczyzna</ComboBoxItem>
