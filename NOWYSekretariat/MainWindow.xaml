@@ -11,7 +11,7 @@
         <CollectionViewSource x:Key="_Table_uczenViewSource" Source="{Binding _Table_uczen, Source={StaticResource database1DataSet}}"/>
     </Window.Resources>
     <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
-        <TabControl HorizontalAlignment="Left" Height="374" Margin="37,10,0,0" VerticalAlignment="Top" Width="755">
+        <TabControl HorizontalAlignment="Left" Height="399" Margin="37,10,0,0" VerticalAlignment="Top" Width="755">
             <TabItem Header="Uczen">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -24,7 +24,7 @@
                         <ColumnDefinition Width="20*"/>
                         <ColumnDefinition Width="621*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="333,308,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1" Click="buttonSend_Click"/>
+                    <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="333,318,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1" Click="buttonSend_Click" Height="32" Width="50"/>
 
                     <TextBox x:Name="textbox_uczen_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_imie_PreviewKeyDown" />
                     <TextBox x:Name="textbox_uczen_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_drugieImie_PreviewKeyDown" />
@@ -55,7 +55,7 @@
                         <ComboBoxItem>4-Pr</ComboBoxItem>
                         <ComboBoxItem>4-Mech</ComboBoxItem>
                         <ComboBoxItem>4-Chlod</ComboBoxItem>
-                        
+
                     </ComboBox>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Drugie Imie"/><LineBreak/><Run/></TextBlock>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Imie"/><LineBreak/><Run/></TextBlock>
@@ -66,8 +66,17 @@
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Data urodzenia"/><LineBreak/><Run/></TextBlock>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Pesel"/><LineBreak/><Run/></TextBlock>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Klasa"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Klasa"/><LineBreak/></TextBlock>
                     <TextBox x:Name="textbox_uczen_Pesel" HorizontalAlignment="Left" Margin="250,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown" TextChanged="textbox_uczen_Pesel_TextChanged"/>
+                    <ComboBox x:Name="combobox_uczen_grupa" HorizontalAlignment="Left" Margin="250,291,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
+                        <ComboBoxItem Content="Hiszpanski"/>
+                        <ComboBoxItem Content="Niemiecki"/>
+                        <ComboBoxItem Content="Angielski"/>
+
+
+
+                    </ComboBox>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Text="Grupa" RenderTransformOrigin="0.667,0.625" Grid.Column="1" Margin="133,297,0,0"/>
 
                 </Grid>
             </TabItem>
@@ -91,9 +100,9 @@
                     </Grid.ColumnDefinitions>
                     <DataGrid  Name ="g1" Grid.Column="1" HorizontalAlignment="Left" Height="154" Margin="29,57,0,0" VerticalAlignment="Top" Width="526">
                         <DataGrid.Columns>
-                            
+
                         </DataGrid.Columns>
-                        
+
                     </DataGrid>
                 </Grid>
             </TabItem>
