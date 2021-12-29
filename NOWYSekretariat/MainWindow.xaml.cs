@@ -59,6 +59,7 @@ namespace NOWYSekretariat
         }
         private void binddatagrip3()
         {
+            /*
             SqlConnection con = new SqlConnection();
             con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
             con.Open();
@@ -72,6 +73,7 @@ namespace NOWYSekretariat
             g3.ItemsSource = dt.DefaultView;
 
             con.Close();
+            */
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -184,6 +186,10 @@ namespace NOWYSekretariat
                 MessageBox.Show("Uzupełnij wymagane pola: Imie,Nazwisko,Pesel(musi posiadac 11 cyfr),Klasa");
             }
 
+
+        }
+        private void buttonSendnauczyciel_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
@@ -371,6 +377,8 @@ namespace NOWYSekretariat
         }
 
         
+
+
 
 
 
