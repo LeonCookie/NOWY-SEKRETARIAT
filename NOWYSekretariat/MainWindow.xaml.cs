@@ -63,10 +63,10 @@ namespace NOWYSekretariat
             con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
             con.Open();
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "Select  * from[Table-Obsluga]";
+            cmd.CommandText = "Select  * from[Table-Ubsluga]";
             cmd.Connection = con;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Table-Obsluga");
+            DataTable dt = new DataTable("Table_Ubsluga");
             da.Fill(dt);
 
             g3.ItemsSource = dt.DefaultView;
@@ -370,7 +370,17 @@ namespace NOWYSekretariat
 
         }
 
+        private void buttonSendnauczyciel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
         
+
+        
+
+        
+
+
 
 
 
