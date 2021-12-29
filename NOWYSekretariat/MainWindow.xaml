@@ -188,7 +188,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="#FF07FF19">
-                    <Button x:Name="buttonSendobsluga" Content="Wyślij" HorizontalAlignment="Left" Margin="338,590,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" />
+                    <Button x:Name="buttonSendobsluga" Content="Wyślij" HorizontalAlignment="Left" Margin="337,435,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Click="buttonSendobsluga_Click" />
 
                     <TextBox x:Name="textbox_obsluga_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_imie_PreviewKeyDown" Grid.ColumnSpan="2" />
                     <TextBox x:Name="textbox_obsluga_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_drugieImie_PreviewKeyDown" Grid.ColumnSpan="2" />
@@ -213,15 +213,24 @@
                     <TextBlock HorizontalAlignment="Left" Margin="133,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Pesel"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="133,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
                     <TextBox x:Name="textbox_obsluga_Pesel" HorizontalAlignment="Left" Margin="250,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown" TextChanged="textbox_uczen_Pesel_TextChanged" Grid.ColumnSpan="2"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Wychowawstwo "/><LineBreak/><Run Text="Klasy"/><LineBreak/><Run/></TextBlock>
-                    
-                    <TextBlock HorizontalAlignment="Left" Margin="133,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Przedmioty Nauczane"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,439,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Jakie Klasy Uczy"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,553,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="DataZatrudnienia"/><LineBreak/><Run/></TextBlock>
-                    <DatePicker x:Name="DataZatrudnienia_obsluga" HorizontalAlignment="Left" Margin="250,555,0,0" VerticalAlignment="Top" Height="30" Width="216" Grid.ColumnSpan="2"/>
-                    
-                    
-                   
+                    <TextBlock HorizontalAlignment="Left" Margin="133,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Informajce o Etacie"/><LineBreak/><Run/></TextBlock>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="133,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Opis stanowiska"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="133,439,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="133,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="DataZatrudnienia"/><LineBreak/><Run/></TextBlock>
+                    <DatePicker x:Name="DataZatrudnienia_obsluga" HorizontalAlignment="Left" Margin="250,366,0,0" VerticalAlignment="Top" Height="30" Width="216"/>
+                    <ComboBox x:Name="combobox_obsluga_Etat" HorizontalAlignment="Left" Margin="250,262,0,0" VerticalAlignment="Top" Width="216">
+                        <ComboBoxItem Content="Pełen"/>
+                        <ComboBoxItem Content="Pół"/>
+                        <ComboBoxItem Content="Jedna czwarta"/>
+                        <ComboBoxItem Content="Na wezwanie"/>
+                        <ComboBoxItem Content="Umowa o dzieło"/>
+                        <ComboBoxItem Content="Praca dorywcza"/>
+                    </ComboBox>
+                    <TextBox x:Name="textbox_obsluga_OpisStanowiska" HorizontalAlignment="Left" Margin="250,315,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieMatki_PreviewKeyDown"/>
+
+
+
 
 
 

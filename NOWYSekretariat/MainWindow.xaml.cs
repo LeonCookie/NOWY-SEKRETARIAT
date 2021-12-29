@@ -186,6 +186,30 @@ namespace NOWYSekretariat
 
 
         }
+        private void buttonSendnauczyciel_Click(object sender, RoutedEventArgs e)
+        {
+           /* if (!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text) && textbox_uczen_Pesel.Text.Length == 11) //wymagane pola nie sa puste
+            {
+            }
+            else
+            {
+
+            }
+           */
+        }
+
+        private void buttonSendobsluga_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+            if (!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text) && textbox_uczen_Pesel.Text.Length == 11) //wymagane pola nie sa puste
+            {
+            }
+            else
+            {
+
+            }
+            */
+        }
 
 
 
@@ -370,15 +394,12 @@ namespace NOWYSekretariat
 
         }
 
-        private void buttonSendnauczyciel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
         
 
-        
 
-        
+
+
+
 
 
 
