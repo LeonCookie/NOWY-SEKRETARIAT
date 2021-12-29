@@ -11,7 +11,7 @@
         <CollectionViewSource x:Key="_Table_uczenViewSource" Source="{Binding _Table_uczen, Source={StaticResource database1DataSet}}"/>
     </Window.Resources>
     <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Margin="0,0,2,0">
-        <TabControl HorizontalAlignment="Left" Height="908" Margin="37,10,-184,-499" VerticalAlignment="Top" Width="937">
+        <TabControl HorizontalAlignment="Left" Height="908" Margin="37,10,-551,-499" VerticalAlignment="Top" Width="1304">
             <TabItem Header="Uczen">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -103,15 +103,10 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="#FFF5820E" DataContext="{StaticResource _Table_uczenViewSource}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="8*"/>
-                        <ColumnDefinition Width="14*"/>
-                        <ColumnDefinition Width="909*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid  Name ="g1" Grid.Column="2" HorizontalAlignment="Left" Height="333" Margin="34,29,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True">
-                        <DataGrid.Columns>
 
-                        </DataGrid.Columns>
+
+                    <DataGrid  Name ="g1" Grid.Column="1" HorizontalAlignment="Left" Height="333" Margin="32,23,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True" Grid.ColumnSpan="2">
+
 
                     </DataGrid>
                 </Grid>
@@ -124,11 +119,8 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="#FF0719FF">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="201*"/>
-                        <ColumnDefinition Width="730*"/>
-                    </Grid.ColumnDefinitions>
-                    <DataGrid Name="g2" HorizontalAlignment="Left" Height="333" Margin="52,36,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True" Grid.ColumnSpan="2">
+
+                    <DataGrid Name="g2" HorizontalAlignment="Left" Height="333" Margin="32,23,0,0" VerticalAlignment="Top" Width="1182" IsReadOnly="True">
                         <DataGrid.Columns>
 
                         </DataGrid.Columns>
@@ -144,11 +136,8 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="#FF07FF19">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="13*"/>
-                        <ColumnDefinition Width="402*"/>
-                        <ColumnDefinition Width="516*"/>
-                    </Grid.ColumnDefinitions>
+
+
                     <DataGrid   Name="g3" Grid.Column="1" HorizontalAlignment="Left" Height="333" Margin="32,23,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True" Grid.ColumnSpan="2">
                         <DataGrid.Columns>
 

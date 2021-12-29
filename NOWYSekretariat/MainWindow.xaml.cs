@@ -47,10 +47,10 @@ namespace NOWYSekretariat
             con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
             con.Open();
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "Select  * from[Table-uczen]";
+            cmd.CommandText = "Select  * from[Table-Nauczyciel]";
             cmd.Connection = con;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Table-uczen");
+            DataTable dt = new DataTable("Table-Nauczyciel");
             da.Fill(dt);
 
             g2.ItemsSource = dt.DefaultView;
@@ -63,10 +63,10 @@ namespace NOWYSekretariat
             con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
             con.Open();
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "Select  * from[Table-uczen]";
+            cmd.CommandText = "Select  * from[Table-Obsługa]";
             cmd.Connection = con;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Table-uczen");
+            DataTable dt = new DataTable("Table-Obsługa");
             da.Fill(dt);
 
             g3.ItemsSource = dt.DefaultView;
@@ -369,6 +369,8 @@ namespace NOWYSekretariat
         {
 
         }
+
+        
 
 
 
