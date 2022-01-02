@@ -1,4 +1,0 @@
-﻿SET IDENTITY_INSERT [dbo].[Table-Ubsluga] ON
-INSERT INTO [dbo].[Table-Ubsluga] ([Id], [Imie], [DrugieImie], [Nazwisko], [NazwiskoPanienskie], [ImieMatki], [ImieOjca], [DataUrodzenia], [Pesel], [Plec], [InformacjaEtat], [OpisStanowiska], [DataZatrudnienia]) VALUES (2, N'Mariusz', NULL, N'Szkola', NULL, N'Anna', N'Mateusz', N'1900-01-01', N'11111111111', N'Kobieta', N'Pelen', N'Sprzatacz', N'1978-09-10')
-INSERT INTO [dbo].[Table-Ubsluga] ([Id], [Imie], [DrugieImie], [Nazwisko], [NazwiskoPanienskie], [ImieMatki], [ImieOjca], [DataUrodzenia], [Pesel], [Plec], [InformacjaEtat], [OpisStanowiska], [DataZatrudnienia]) VALUES (4, N'Alina', N'Monika', N'Rogalska', NULL, N'Monika', N'Mariusz', N'1970-05-19', N'33333333451', N'Kobieta', N'Pelen', N'Sprzatacz', N'1999-12-11')
-SET IDENTITY_INSERT [dbo].[Table-Ubsluga] OFF

@@ -24,7 +24,7 @@
                         <ColumnDefinition Width="20*"/>
                         <ColumnDefinition Width="621*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="337,531,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1" Click="buttonSend_Click"/>
+                    <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="329,451,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1" Click="buttonSend_Click"/>
 
                     <Image x:Name="image_uczen" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="293,240,0,0" VerticalAlignment="Top" Width="100"/>
                     <TextBox x:Name="textbox_uczen_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_imie_PreviewKeyDown" />
@@ -56,7 +56,6 @@
                         <ComboBoxItem>4-Pr</ComboBoxItem>
                         <ComboBoxItem>4-Mech</ComboBoxItem>
                         <ComboBoxItem>4-Chlod</ComboBoxItem>
-                        <ListBox Height="100" Width="100"/>
 
                     </ComboBox>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Drugie Imie"/><LineBreak/><Run/></TextBlock>
@@ -73,10 +72,17 @@
 
                         </InlineUIContainer><LineBreak/></TextBlock>
                     <TextBox x:Name="textbox_uczen_Pesel" HorizontalAlignment="Left" Margin="250,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown" TextChanged="textbox_uczen_Pesel_TextChanged"/>
+                    <ComboBox x:Name="combobox_uczen_grupa" HorizontalAlignment="Left" Margin="250,424,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
+                        <ComboBoxItem Content="Hiszpanski"/>
+                        <ComboBoxItem Content="Niemiecki"/>
+                        <ComboBoxItem Content="Angielski"/>
+
+
+
+                    </ComboBox>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,397,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Text="Klasa"/>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Zdjecie"/><LineBreak/><Run/></TextBlock>
-                    <Button x:Name="btn_uczen_zdjecie" Content="Dodaj" Grid.Column="1" HorizontalAlignment="Left" Margin="250,240,0,0" VerticalAlignment="Top" Width="47" Height="46" Click="btn_uczen_zdjecie_Click"/>
-                    <ListBox x:Name="Listbox_uczen_grupa" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="250,426,0,0" VerticalAlignment="Top" Width="216" RenderTransformOrigin="0.5,0.5"/>
+                    <Button x:Name="btn_uczen_zdjecie" Content="Dodaj" Grid.Column="1" HorizontalAlignment="Left" Margin="226,240,0,0" VerticalAlignment="Top" Width="47" Height="46" Click="btn_uczen_zdjecie_Click"/>
 
 
                 </Grid>
@@ -150,10 +156,9 @@
                             <TextBlock>Elektryk</TextBlock>
                             <TextBlock>Chłodnictwo</TextBlock>
                             <TextBlock>Mechatronika</TextBlock>
-                            <TextBlock>Matematyka</TextBlock>
                         </ListView.Items>
                     </ListView>
-                    <ListView x:Name="list_nauczuciel_jakieKlasy" HorizontalAlignment="Left" Height="106" Margin="250,570,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2">
+                    <ListView x:Name="list_nauczuciel_jakieKlasy" HorizontalAlignment="Left" Height="106" Margin="250,564,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2">
                         <ListView.Items>
                             <ComboBoxItem>1-El</ComboBoxItem>
                             <ComboBoxItem>1-Pr</ComboBoxItem>
