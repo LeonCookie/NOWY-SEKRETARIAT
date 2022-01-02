@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NOWYSekretariat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="MainWindow" Height="450" Width="800" >
     <Window.Resources>
         <local:Database1DataSet x:Key="database1DataSet"/>
         <CollectionViewSource x:Key="_Table_uczenViewSource" Source="{Binding _Table_uczen, Source={StaticResource database1DataSet}}"/>

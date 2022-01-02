@@ -75,17 +75,8 @@ namespace NOWYSekretariat
             con.Close();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            NOWYSekretariat.Database1DataSet database1DataSet = ((NOWYSekretariat.Database1DataSet)(this.FindResource("database1DataSet")));
-            // Załaduj dane do tabeli _Table_uczen. Możesz modyfikować ten kod w razie potrzeby.
-            NOWYSekretariat.Database1DataSetTableAdapters.Table_uczenTableAdapter database1DataSetTable_uczenTableAdapter = new NOWYSekretariat.Database1DataSetTableAdapters.Table_uczenTableAdapter();
-            database1DataSetTable_uczenTableAdapter.Fill(database1DataSet._Table_uczen);
-            System.Windows.Data.CollectionViewSource _Table_uczenViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("_Table_uczenViewSource")));
-            _Table_uczenViewSource.View.MoveCurrentToFirst();
-        }
-
+        
+        
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -159,7 +150,7 @@ namespace NOWYSekretariat
                 cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
 
                 cmd.CommandText = "insert into [Table-uczen](Grupa)values(@Grupa)";
-                cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
+                //cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
 
                 
 
@@ -367,6 +358,367 @@ namespace NOWYSekretariat
         }
 
         private void textbox_uczen_ImieOjca_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+        private void textbox_nauczyciel_imie_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e) //tylko litery w textbox imie
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+
+        }
+
+        private void textbox_nauczyciel_Pesel_PreviewKeyDown(object sender, KeyEventArgs e) //tylko liczby w peselu
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+
+
+            if (isNumber || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko cyfry");
+            }
+
+        }
+
+        private void textbox_nauczyciel_drugieImie_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+
+        private void textbox_nauczyciel_nazwisko_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+
+        private void textbox_nauczyciel_nazwiskoPanienskie_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+
+        private void textbox_nauczyciel_ImieMatki_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+
+        private void textbox_nauczyciel_ImieOjca_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+        private void textbox_obsluga_imie_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e) //tylko litery w textbox imie
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+
+        }
+
+        private void textbox_obsluga_Pesel_PreviewKeyDown(object sender, KeyEventArgs e) //tylko liczby w peselu
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+
+
+            if (isNumber || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko cyfry");
+            }
+
+        }
+
+        private void textbox_obsluga_drugieImie_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+
+        private void textbox_obsluga_nazwisko_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+
+        private void textbox_obsluga_nazwiskoPanienskie_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+
+        private void textbox_obsluga_ImieMatki_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+
+        private void textbox_obsluga_ImieOjca_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
+            bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
+            bool isCtrlA = e.Key == Key.A && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isCtrlV = e.Key == Key.V && e.KeyboardDevice.Modifiers == ModifierKeys.Control;
+            bool isBack = e.Key == Key.Back;
+            bool isLeftOrRight = e.Key == Key.Left || e.Key == Key.Right;
+            bool isUpOrDown = e.Key == Key.Up || e.Key == Key.Down;
+            bool shift = e.Key == Key.LeftShift || e.Key == Key.RightShift;
+
+            if (isLetter || isCtrlA || isCtrlV || isBack || isLeftOrRight || isUpOrDown || shift)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Tylko litery");
+            }
+        }
+        private void combobox_obsluga_Etat_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             bool isNumber = e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9;
             bool isLetter = e.Key >= Key.A && e.Key <= Key.Z || (e.Key >= Key.A && e.Key <= Key.Z && e.KeyboardDevice.Modifiers == ModifierKeys.Shift);
