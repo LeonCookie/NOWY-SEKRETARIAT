@@ -5,7 +5,8 @@ using System.Configuration;
 using System.Data;
 using System.Windows.Input;
 using System;
-
+using Microsoft.Win32;
+using System.Windows.Media.Imaging;
 
 namespace NOWYSekretariat
 {
@@ -394,7 +395,37 @@ namespace NOWYSekretariat
 
         }
 
-        
+        private void btn_uczen_zdjecie_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                Uri fileUri = new Uri(openFileDialog.FileName);
+                image_uczen.Source = new BitmapImage(fileUri);
+            }
+        }
+
+        private void btn_nauczyciel_zdjecie_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                Uri fileUri = new Uri(openFileDialog.FileName);
+                image_nauczyciel.Source = new BitmapImage(fileUri);
+            }
+        }
+
+        private void btn_obsluga_zdjecie_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                Uri fileUri = new Uri(openFileDialog.FileName);
+                image_obsluga.Source = new BitmapImage(fileUri);
+            }
+        }
+
+
 
 
 

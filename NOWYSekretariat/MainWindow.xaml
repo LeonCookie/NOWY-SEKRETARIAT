@@ -26,6 +26,7 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="buttonSend" Content="Wyślij" HorizontalAlignment="Left" Margin="329,451,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Grid.Column="1" Click="buttonSend_Click"/>
 
+                    <Image x:Name="image_uczen" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="293,240,0,0" VerticalAlignment="Top" Width="100"/>
                     <TextBox x:Name="textbox_uczen_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_imie_PreviewKeyDown" />
                     <TextBox x:Name="textbox_uczen_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_drugieImie_PreviewKeyDown" />
                     <TextBox x:Name="textbox_uczen_nazwisko" HorizontalAlignment="Left" Margin="250,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Grid.Column="1" PreviewKeyDown="textbox_uczen_nazwisko_PreviewKeyDown" />
@@ -81,6 +82,7 @@
                     </ComboBox>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,397,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Text="Klasa"/>
                     <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="133,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Zdjecie"/><LineBreak/><Run/></TextBlock>
+                    <Button x:Name="btn_uczen_zdjecie" Content="Dodaj" Grid.Column="1" HorizontalAlignment="Left" Margin="226,240,0,0" VerticalAlignment="Top" Width="47" Height="46" Click="btn_uczen_zdjecie_Click"/>
 
 
                 </Grid>
@@ -97,7 +99,7 @@
                         <ColumnDefinition Width="438*"/>
                         <ColumnDefinition Width="493*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="buttonSendnauczyciel" Content="Wyślij" HorizontalAlignment="Left" Margin="333,673,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Click="buttonSendnauczyciel_Click" />
+                    <Button x:Name="buttonSendnauczyciel" Content="Wyślij" HorizontalAlignment="Left" Margin="330,733,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Click="buttonSendnauczyciel_Click" />
 
                     <TextBox x:Name="textbox_nauczyciel_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_imie_PreviewKeyDown" Grid.ColumnSpan="2" />
                     <TextBox x:Name="textbox_nauczyciel_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_drugieImie_PreviewKeyDown" Grid.ColumnSpan="2" />
@@ -106,7 +108,7 @@
                     <TextBox x:Name="textbox_nauczyciel_ImieMatki" HorizontalAlignment="Left" Margin="250,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieMatki_PreviewKeyDown" Grid.ColumnSpan="2"/>
                     <TextBox x:Name="textbox_nauczyciel_ImieOjca" HorizontalAlignment="Left" Margin="250,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieOjca_PreviewKeyDown" Grid.ColumnSpan="2"/>
                     <DatePicker x:Name="data_urodzenia_nauczyciel" HorizontalAlignment="Left" Margin="250,172,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2"/>
-                    <ComboBox x:Name="combobox_nauczyciel_plec" HorizontalAlignment="Left" Margin="250,306,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2">
+                    <ComboBox x:Name="combobox_nauczyciel_plec" HorizontalAlignment="Left" Margin="250,363,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2">
                         <ComboBoxItem>Mężczyzna</ComboBoxItem>
                         <ComboBoxItem>Kobieta</ComboBoxItem>
                     </ComboBox>
@@ -120,10 +122,10 @@
                     <TextBlock HorizontalAlignment="Left" Margin="133,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Imie Ojca"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="133,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Data urodzenia"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="133,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Pesel"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="133,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
                     <TextBox x:Name="textbox_nauczyciel_Pesel" HorizontalAlignment="Left" Margin="250,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown" TextChanged="textbox_uczen_Pesel_TextChanged" Grid.ColumnSpan="2"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Wychowawstwo "/><LineBreak/><Run Text="Klasy"/><LineBreak/><Run/></TextBlock>
-                    <ComboBox x:Name="combobox_nauczyciel_WychowanieKlasy" HorizontalAlignment="Left" Margin="250,343,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2">
+                    <TextBlock HorizontalAlignment="Left" Margin="133,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Wychowawstwo "/><LineBreak/><Run Text="Klasy"/><LineBreak/><Run/></TextBlock>
+                    <ComboBox x:Name="combobox_nauczyciel_WychowanieKlasy" HorizontalAlignment="Left" Margin="250,400,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2">
                         <ComboBoxItem>1-El</ComboBoxItem>
                         <ComboBoxItem>1-Pr</ComboBoxItem>
                         <ComboBoxItem>1-Mech</ComboBoxItem>
@@ -141,11 +143,12 @@
                         <ComboBoxItem>4-Mech</ComboBoxItem>
                         <ComboBoxItem>4-Chlod</ComboBoxItem>
                     </ComboBox>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Przedmioty Nauczane"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="126,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Jakie Klasy Uczy"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,638,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="DataZatrudnienia"/><LineBreak/><Run/></TextBlock>
-                    <DatePicker x:Name="DataZatrudnienia_Nauczyciel" HorizontalAlignment="Left" Margin="250,638,0,0" VerticalAlignment="Top" Height="30" Width="216" Grid.ColumnSpan="2"/>
-                    <ListView x:Name="list_nauczuciel_przedmiotyNauczane" HorizontalAlignment="Left" Height="106" Margin="250,392,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2">
+                    <Button x:Name="btn_nauczyciel_zdjecie" Content="Dodaj" HorizontalAlignment="Left" Margin="250,240,0,0" VerticalAlignment="Top" Width="46" Height="46" Click="btn_nauczyciel_zdjecie_Click"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="133,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.597,2.198"><Run Text="Przedmioty Nauczane"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="126,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Jakie Klasy Uczy"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="133,702,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="DataZatrudnienia"/><LineBreak/><Run/></TextBlock>
+                    <DatePicker x:Name="DataZatrudnienia_Nauczyciel" HorizontalAlignment="Left" Margin="250,698,0,0" VerticalAlignment="Top" Height="30" Width="216" Grid.ColumnSpan="2"/>
+                    <ListView x:Name="list_nauczuciel_przedmiotyNauczane" HorizontalAlignment="Left" Height="106" Margin="250,453,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2">
                         <ListView.Items>
                             <TextBlock>Angielski</TextBlock>
                             <TextBlock>Polski</TextBlock>
@@ -155,7 +158,7 @@
                             <TextBlock>Mechatronika</TextBlock>
                         </ListView.Items>
                     </ListView>
-                    <ListView x:Name="list_nauczuciel_jakieKlasy" HorizontalAlignment="Left" Height="106" Margin="250,514,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2">
+                    <ListView x:Name="list_nauczuciel_jakieKlasy" HorizontalAlignment="Left" Height="106" Margin="250,564,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2">
                         <ListView.Items>
                             <ComboBoxItem>1-El</ComboBoxItem>
                             <ComboBoxItem>1-Pr</ComboBoxItem>
@@ -176,6 +179,7 @@
                         </ListView.Items>
                     </ListView>
                     <TextBlock HorizontalAlignment="Left" Margin="133,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Zdjecie"/><LineBreak/><Run/></TextBlock>
+                    <Image x:Name="image_nauczyciel" HorizontalAlignment="Left" Height="100" Margin="316,240,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.515,0.89"/>
 
 
 
@@ -208,6 +212,7 @@
                         <ComboBoxItem>Mężczyzna</ComboBoxItem>
                         <ComboBoxItem>Kobieta</ComboBoxItem>
                     </ComboBox>
+                    <Button x:Name="btn_obsluga_zdjecie" Content="Dodaj" Grid.Column="1" HorizontalAlignment="Left" Margin="226,281,0,0" VerticalAlignment="Top" Width="52" Height="46" Click="btn_obsluga_zdjecie_Click"/>
 
 
                     <TextBlock HorizontalAlignment="Left" Margin="109,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Drugie Imie"/><LineBreak/><Run/></TextBlock>
@@ -236,6 +241,7 @@
                     </ComboBox>
                     <TextBox x:Name="textbox_obsluga_OpisStanowiska" HorizontalAlignment="Left" Margin="226,463,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieMatki_PreviewKeyDown" Grid.Column="1"/>
                     <TextBlock HorizontalAlignment="Left" Margin="109,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Zdjecie"/><LineBreak/><Run/></TextBlock>
+                    <Image x:Name="image_obsluga" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="312,281,0,0" VerticalAlignment="Top" Width="100"/>
 
 
 
