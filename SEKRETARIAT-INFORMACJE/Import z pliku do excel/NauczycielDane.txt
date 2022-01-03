@@ -1,0 +1,4 @@
+Id,Imie,DrugieImie,Nazwisko,NazwiskoPanienskie,ImieMatki,ImieOjca,DataUrodzenia,Pesel,Plec,Wychowawstwo,PrzedmiotyNauczane,JakieKlasyUczy,DataZatrudnienia
+3,Nauczyciel,Dobry,Bardzo,,,,11.11.1980 00:00:00,11111111111,Mezczyzna,,Angielski,3-PR,10.08.2013 00:00:00
+6,Adam,,Kowalski,,Anna,,06.06.1967 00:00:00,22222222222,Mezczyzna,,Matematyka,2-PR,22.09.2021 00:00:00
+
