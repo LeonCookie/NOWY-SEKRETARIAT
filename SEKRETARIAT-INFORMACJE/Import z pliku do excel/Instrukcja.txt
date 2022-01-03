@@ -1,0 +1,8 @@
+(instrukcja importu danych z txt do excela)
+1.Otwieramy excela
+2.W pliku wchodzimy w zakładke dane i wybieramy dane zewnętrzne z tekstu
+3.Wybieramy plik
+4.Wybieramy opcje Rozdzielany
+5.Bardzo ważne! - zaznaczamy w ogranicznikach Przecinek!(inaczej źle dane wejdą nam do komórek)
+6.Tutaj nic nie zmieniamy i klikamy zakończ
+7.Jak widać wszystkie dane są na swoich miejscach- tam gdzie nie były wpisane dane(Null) zostaje wolne miejsce
