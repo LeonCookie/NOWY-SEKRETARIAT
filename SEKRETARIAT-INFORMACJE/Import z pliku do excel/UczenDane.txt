@@ -1,0 +1,4 @@
+Id,Imie,DrugieImie,Nazwisko,NazwiskoPanienskie,ImieMatki,ImieOjca,DataUrodzenia,Pesel,Plec,Klasa,Grupa
+4,Adam,Edward,Kaczyn,Karolak,Magdalena,Mateusz,21.02.2005 00:00:00,12345678901,Mezczyzna,1-Pr,Hiszpanski
+5,Ewa,Magdalena,Warkoczka,,Alina,Maciej,25.06.2004 00:00:00,09090909099,Kobieta,2-Mech,Niemicki
+
