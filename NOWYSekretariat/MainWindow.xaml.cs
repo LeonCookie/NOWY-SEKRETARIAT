@@ -7,6 +7,9 @@ using System.Windows.Input;
 using System;
 using Microsoft.Win32;
 using System.Windows.Media.Imaging;
+using System.Text;
+using System.IO;
+using System.Diagnostics;
 
 namespace NOWYSekretariat
 {
@@ -122,46 +125,12 @@ namespace NOWYSekretariat
                 cmd.CommandText = "insert into [Table-uczen](Imie)values(@Imie)";
                 cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
 
-                cmd.CommandText = "insert into [Table-uczen](DrugieImie)values(@DrugieImie)";
-                cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
-
-                cmd.CommandText = "insert into [Table-uczen](Nazwisko)values(@Nazwisko)";
-                cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
-
-                cmd.CommandText = "insert into [Table-uczen](NazwiskoPanienskie)values(@NazwiskoPanienskie)";
-                cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
-
-                cmd.CommandText = "insert into [Table-uczen](ImieMatki)values(@ImieMatki)";
-                cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
-
-                cmd.CommandText = "insert into [Table-uczen](ImieOjca)values(@ImieOjca)";
-                cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
-
-                cmd.CommandText = "insert into [Table-uczen]( DataUrodzenia)values(@DataUrodzenia)";
-                cmd.Parameters.AddWithValue("@DataUrodzenia", data_urodzenia.Text);
-
-                cmd.CommandText = "insert into [Table-uczen](Pesel)values(@Pesel)";
-                cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
-
-                cmd.CommandText = "insert into [Table-uczen](Plec)values(@Plec)";
-                cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
-
-                cmd.CommandText = "insert into [Table-uczen](Klasa)values(@Klasa)";
-                cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
-
-                cmd.CommandText = "insert into [Table-uczen](Grupa)values(@Grupa)";
-                //cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
-
+                
+                //
                 
 
 
-                cmd.Connection = con;
-                int a = cmd.ExecuteNonQuery();
-                if (a == 1)
-                {
-                    MessageBox.Show("Data cos tam");
-                    binddatagrip();
-                }
+                
 
 
 
@@ -775,6 +744,63 @@ namespace NOWYSekretariat
                 Uri fileUri = new Uri(openFileDialog.FileName);
                 image_obsluga.Source = new BitmapImage(fileUri);
             }
+        }
+
+        private void btn_daneUczniowie_Click(object sender, RoutedEventArgs e)
+        {
+            this.g1.SelectAllCells();
+            this.g1.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+            ApplicationCommands.Copy.Execute(null, this.g1);
+            this.g1.UnselectAllCells();
+            String result = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+            try
+            {
+                StreamWriter sw = new StreamWriter("UczenDane.txt");
+                sw.WriteLine(result);
+                sw.Close();
+                Process.Start("UczenDane.txt");
+            }
+            catch (Exception ex)
+            { }
+            MessageBox.Show("Pliki znajduja sie w katalogu bin/Debug w folderze z programem ");
+        }
+
+        private void btn_daneNauczyciel_Click(object sender, RoutedEventArgs e)
+        {
+            this.g2.SelectAllCells();
+            this.g2.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+            ApplicationCommands.Copy.Execute(null, this.g2);
+            this.g2.UnselectAllCells();
+            String result = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+            try
+            {
+                StreamWriter sw = new StreamWriter("NauczycielDane.txt");
+                sw.WriteLine(result);
+                sw.Close();
+                Process.Start("NauczycielDane.txt");
+            }
+            catch (Exception ex)
+            { }
+            MessageBox.Show("Pliki znajduja sie w katalogu bin/Debug w folderze z programem ");
+        }
+
+        private void btn_daneObsluga_Click(object sender, RoutedEventArgs e)
+        {
+            this.g3.SelectAllCells();
+            this.g3.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+            ApplicationCommands.Copy.Execute(null, this.g3);
+            this.g3.UnselectAllCells();
+            String result = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+            try
+            {
+                StreamWriter sw = new StreamWriter("ObslugaDane.txt");
+                sw.WriteLine(result);
+                sw.Close();
+                Process.Start("ObslugaDane.txt");
+            }
+            catch (Exception ex)
+            { }
+            MessageBox.Show("Pliki znajduja sie w katalogu bin/Debug w folderze z programem ");
         }
 
 
