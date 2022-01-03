@@ -94,43 +94,32 @@ namespace NOWYSekretariat
             {
 
 
-                /*  SqlCommand cmd = new SqlCommand();
-                 cmd.CommandText = "insert into [Table-uczen](Imie,DrugieImie,Nazwisko,NazwiskoPanienskie,ImieMatki,ImieOjca,DataUrodzenia,Pesel,Plec,Klasa, Grupa) values(@Imie,@DrugieImie,@Nazwisko,@NazwiskoPanienskie,@ImieMatki,@ImieOjca,@Pesel,@Klasa,@Grupa)";
-                cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
-                cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
-                cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
-                cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
-                cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
-                cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
-                cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
-                cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
-                cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
-                cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
-                */
-                /* string connectionstring = "NOWYSekretariat.Properties.Settings.dbUczenConnection";
+                /*
+                 string connectionstring = "NOWYSekretariat.Properties.Settings.dbUczenConnection";
                  SqlConnection con = new SqlConnection(connectionstring);
                  con.Open(); 
-                 SqlCommand cmd = new SqlCommand("insert into Table-uczen(Imie,Drugie Imie,Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, DataUrodzenia,Pesel,Plec,Klasa, Grupa) values('"+textbox_uczen_imie.Text+ "','" + textbox_uczen_drugieImie.Text +"','" + textbox_uczen_nazwisko.Text + "','" + textbox_uczen_nazwiskoPanienskie.Text + "','" + textbox_uczen_ImieMatki.Text + "','" + textbox_uczen_ImieOjca.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_grupa.Text + "')",con);
+                 SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[Table-uczen] ([Id], [Imie], [DrugieImie], [Nazwisko], [NazwiskoPanienskie], [ImieMatki], [ImieOjca], [DataUrodzenia], [Pesel], [Plec], [Klasa], [Grupa]) VALUES (4, '" + textbox_uczen_imie.Text + "','" + textbox_uczen_drugieImie.Text + "','" + textbox_uczen_nazwisko.Text + "','" + textbox_uczen_nazwiskoPanienskie.Text + "','" + textbox_uczen_ImieMatki.Text + "','" + textbox_uczen_ImieOjca.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_grupa.Text + "'))", con);
                  SqlDataAdapter da = new SqlDataAdapter(cmd);
                  DataSet ds = new DataSet();
-                 da.Fill(ds);
-
-                 MessageBox.Show("Udalo się");
+                 da.Fill(ds)
                 */
+                //a.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_gru
+                //INSERT INTO [dbo].[Table-uczen] ([Id], [Imie], [DrugieImie], [Nazwisko], [NazwiskoPanienskie], [ImieMatki], [ImieOjca], [DataUrodzenia], [Pesel], [Plec], [Klasa], [Grupa]) VALUES (4, N'Adam', N'Edward', N'Kaczyn', N'Karolak', N'Magdalena', N'Mateusz', N'2005-02-21', N'12345678901', N'Mezczyzna', N'1-Pr', N'Hiszpanski')
+                
+            
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "insert into [Table-uczen](Imie)values(@Imie)";
-                cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
+
+            MessageBox.Show("Udalo się");
+
+
+
+
 
                 
-                //
-                
 
 
-                
+
+
 
 
 
