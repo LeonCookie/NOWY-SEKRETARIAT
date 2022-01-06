@@ -195,7 +195,7 @@
                             </Style>
                         </DatePicker.Resources>
                     </DatePicker>
-                    <ListView x:Name="list_nauczuciel_przedmiotyNauczane" HorizontalAlignment="Left" Height="106" Margin="223,453,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2" Grid.Column="1">
+                    <ListView x:Name="list_nauczuciel_przedmiotyNauczane"  HorizontalAlignment="Left" Height="106" Margin="223,453,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2" Grid.Column="1" Background="White">
                         <ListView.Items>
                             <TextBlock>Angielski</TextBlock>
                             <TextBlock>Polski</TextBlock>
@@ -279,20 +279,20 @@
 
 
                     <TextBlock HorizontalAlignment="Left" Margin="109,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Drugie Imie"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="109,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Imie"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="109,79,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="93" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="109,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1" Text="Imie*"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="109,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Nazwisko"/><Run Text="*"/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="109,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="18" Grid.Column="1"><Run Text="Nazwisko Panienskie"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="109,128,0,0" TextWrapping="Wrap" Text="Imie Matki" VerticalAlignment="Top" Width="86" Grid.Column="1"/>
                     <TextBlock HorizontalAlignment="Left" Margin="109,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Imie Ojca"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="109,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Data urodzenia"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="109,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Pesel"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="109,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Pesel"/><Run Text="*"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="109,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
                     <TextBox x:Name="textbox_obsluga_Pesel" HorizontalAlignment="Left" Margin="226,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown" TextChanged="textbox_uczen_Pesel_TextChanged" Grid.Column="1"/>
                     <TextBlock HorizontalAlignment="Left" Margin="109,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1" RenderTransformOrigin="0.505,1.587"><Run Text="Informajce o Etacie"/><LineBreak/><Run/></TextBlock>
 
                     <TextBlock HorizontalAlignment="Left" Margin="109,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Opis stanowiska"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="109,439,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="109,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1" RenderTransformOrigin="0.538,2.538"><Run Text="DataZatrudnienia"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="109,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Grid.Column="1" RenderTransformOrigin="0.538,2.538"><Run Text="DataZatrudnienia"/><Run Text="*"/><LineBreak/><Run/></TextBlock>
                     <DatePicker x:Name="DataZatrudnienia_obsluga" HorizontalAlignment="Left" Margin="226,508,0,0" VerticalAlignment="Top" Height="30" Width="216" Grid.Column="1">
                         <DatePicker.Resources>
                             <Style TargetType="{x:Type DatePickerTextBox}">
