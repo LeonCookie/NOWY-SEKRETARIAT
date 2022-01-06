@@ -105,28 +105,30 @@ namespace NOWYSekretariat
                 */
                 //a.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_gru
                 //INSERT INTO [dbo].[Table-uczen] ([Id], [Imie], [DrugieImie], [Nazwisko], [NazwiskoPanienskie], [ImieMatki], [ImieOjca], [DataUrodzenia], [Pesel], [Plec], [Klasa], [Grupa]) VALUES (4, N'Adam', N'Edward', N'Kaczyn', N'Karolak', N'Magdalena', N'Mateusz', N'2005-02-21', N'12345678901', N'Mezczyzna', N'1-Pr', N'Hiszpanski')
+
+              /*  
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Leon\source\repos\NOWYSekretariat\NOWYSekretariat\Database1.mdf;Integrated Security=True");
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = @"insert into [Table-uczen](Imie,DrugieImie,Nazwisko,NazwiskoPanienskie,ImieMatki,ImieOjca,DataUrodzenia,Pesel,Plec,Klasa, Grupa) values(@Imie,@DrugieImie,@Nazwisko,@NazwiskoPanienskie,@ImieMatki,@ImieOjca,@DataUrodzenia,@Pesel,@Klasa,@Grupa)";
+                cmd.Parameters.Add(new SqlParameter("Imie", textbox_uczen_imie.Text));
+                cmd.Parameters.Add(new SqlParameter("DrugieImie", textbox_uczen_drugieImie.Text));
+                cmd.Parameters.Add(new SqlParameter("Nazwisko", textbox_uczen_nazwisko.Text));
+                cmd.Parameters.Add(new SqlParameter("NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text));
+                cmd.Parameters.Add(new SqlParameter("ImieMatki", textbox_uczen_ImieMatki.Text));
+                cmd.Parameters.Add(new SqlParameter("ImieOjca", textbox_uczen_ImieOjca.Text));
+                cmd.Parameters.Add(new SqlParameter("DataUrodzenia", data_urodzenia.Text));
+                cmd.Parameters.Add(new SqlParameter("Pesel", textbox_uczen_Pesel.Text));
+                cmd.Parameters.Add(new SqlParameter("Klasa", combobox_uczen_klasa.Text));
+                cmd.Parameters.Add(new SqlParameter("Grupa", combobox_uczen_grupa.Text));
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Dodano dane");
+                binddatagrip();
+                */
+
+
+
                 
-            
-
-
-            MessageBox.Show("Udalo się");
-
-
-
-
-
-                
-
-
-
-
-
-
-
-
-
-
-
 
             }
             else
