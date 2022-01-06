@@ -6,12 +6,24 @@
         xmlns:local="clr-namespace:NOWYSekretariat"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" >
+    
     <Window.Resources>
         <local:Database1DataSet x:Key="database1DataSet"/>
         <CollectionViewSource x:Key="_Table_uczenViewSource" Source="{Binding _Table_uczen, Source={StaticResource database1DataSet}}"/>
     </Window.Resources>
     <Grid Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Margin="0,0,2,0">
-        <TabControl HorizontalAlignment="Left" Height="908" Margin="37,10,-184,-499" VerticalAlignment="Top" Width="937">
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar>
+                    <Button Command="Cut" Content="Cut" />
+                    <Button Command="Copy" Content="Copy" />
+                    <Button Command="Paste" Content="Paste" />
+                    
+                </ToolBar>
+            </ToolBarTray>
+            <TextBox AcceptsReturn="True" />
+        </DockPanel>
+        <TabControl HorizontalAlignment="Left" Height="908" Margin="10,24,-157,-513" VerticalAlignment="Top" Width="937">
             <TabItem Header="Uczen">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -344,9 +356,9 @@
                         <ColumnDefinition Width="14*"/>
                         <ColumnDefinition Width="909*"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid  Name ="g1" Grid.Column="2" HorizontalAlignment="Left" Height="333" Margin="10,110,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True">
-                        <DataGrid.Columns>
-
+                    <DataGrid  Name ="g1" Grid.Column="2" HorizontalAlignment="Left" Height="333" Margin="10,110,0,0" VerticalAlignment="Top" Width="847" IsReadOnly="True" >
+                        <DataGrid.Columns >
+                            
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -354,7 +366,7 @@
                     <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="704,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="195"><Run Text="Prześlij dane do pliku txt"/><InlineUIContainer>
                             <TextBlock Height="3" TextWrapping="Wrap" Text="TextBlock" Width="54"/>
                         </InlineUIContainer></TextBlock>
-                    <TextBox x:Name="dane_uczen_search" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="dane_uczen_search_TextChanged"/>
+                    <TextBox x:Name="dane_uczen_search" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  KeyDown="dane_uczen_search_KeyDown"/>
                     <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Szukaj" VerticalAlignment="Top" RenderTransformOrigin="-3.212,0.75"/>
                 </Grid>
             </TabItem>
@@ -406,6 +418,7 @@
                     <Button x:Name="btn_daneObsluga" Content="Prześlij" Grid.Column="1" HorizontalAlignment="Left" Margin="193,33,0,0" VerticalAlignment="Top" Width="76" Click="btn_daneObsluga_Click"/>
                 </Grid>
             </TabItem>
+            
         </TabControl>
     </Grid>
 </Window>

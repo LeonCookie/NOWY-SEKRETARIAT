@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using System.Windows.Data;
 
 namespace NOWYSekretariat
 {
@@ -30,7 +31,13 @@ namespace NOWYSekretariat
 
 
         }
-
+        private void CommonCommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)//pasek narzedzi(zadań)
+        {
+            e.CanExecute = true;
+        }
+        DataTable dtUczen = new DataTable("Table-uczen");
+        DataTable dtNauczyciel = new DataTable("Table-Nauczyciel");
+        DataTable dtObsluga = new DataTable("Table_Ubsluga");
         private void binddatagrip()
         {
             SqlConnection con = new SqlConnection();
@@ -40,10 +47,10 @@ namespace NOWYSekretariat
             cmd.CommandText = "Select  * from[Table-uczen]";
             cmd.Connection = con;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Table-uczen");
-            da.Fill(dt);
+            
+            da.Fill(dtUczen);
 
-            g1.ItemsSource = dt.DefaultView;
+            g1.ItemsSource = dtUczen.DefaultView;
 
             con.Close();
         }
@@ -56,10 +63,10 @@ namespace NOWYSekretariat
             cmd.CommandText = "Select  * from[Table-Nauczyciel]";
             cmd.Connection = con;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Table-Nauczyciel");
-            da.Fill(dt);
 
-            g2.ItemsSource = dt.DefaultView;
+            da.Fill(dtNauczyciel); ;
+
+            g2.ItemsSource = dtNauczyciel.DefaultView;
 
             con.Close();
         }
@@ -72,10 +79,10 @@ namespace NOWYSekretariat
             cmd.CommandText = "Select  * from[Table-Ubsluga]";
             cmd.Connection = con;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Table_Ubsluga");
-            da.Fill(dt);
+            
+            da.Fill(dtObsluga);
 
-            g3.ItemsSource = dt.DefaultView;
+            g3.ItemsSource = dtObsluga.DefaultView;
 
             con.Close();
         }
@@ -909,10 +916,17 @@ namespace NOWYSekretariat
             Debug.WriteLine(data_urodzenia.Text);
         }
 
-        private void dane_uczen_search_TextChanged(object sender, TextChangedEventArgs e)
+        private void dane_uczen_search_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            if (e.Key >= Key.Enter)
+            {
+                DataView dv = dtUczen.DefaultView;
+                dv.RowFilter = string.Format("Imie like '%{0}%'", dane_uczen_search.Text);
+                g1.ItemsSource = (System.Collections.IEnumerable)dv.ToTable();
+            }
         }
+
+
 
 
 
