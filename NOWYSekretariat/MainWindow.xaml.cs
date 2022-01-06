@@ -18,6 +18,7 @@ namespace NOWYSekretariat
     /// </summary>
     public partial class MainWindow : Window
     {
+        
 
 
         public MainWindow()
@@ -26,6 +27,7 @@ namespace NOWYSekretariat
             binddatagrip();
             binddatagrip2();
             binddatagrip3();
+
 
         }
 
@@ -93,42 +95,9 @@ namespace NOWYSekretariat
 
             if (!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text) && textbox_uczen_Pesel.Text.Length == 11) //wymagane pola nie sa puste
             {
-                /*
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
-
-                try
-                {
-                    using (SqlConnection connection = new SqlConnection(con.ConnectionString))
-                    using (SqlCommand cmd = connection.CreateCommand())
-                    {
-                        connection.Open();
-                        cmd.CommandText = @"Insert into Table - uczen(Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, DataUrodzenia, Pesel, Plec, Klasa, Grupa) values(@Imie, @DrugieImie, @Nazwisko, @NazwiskoPanienskie, @ImieMatki, @ImieOjca, @DataUrodzenia, @Pesel,@Plec,@Klasa, @Grupa)";
-                        cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
-                        cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
-                        cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
-                        cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
-                        cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
-                        cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
-                        cmd.Parameters.AddWithValue("@DataUrodzenia", data_urodzenia.Text);
-                        cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
-                        cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
-                        cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
-                        cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
-                        
-                        
-                        
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("cmd");
-                        binddatagrip();
-                        MessageBox.Show("Wyslano");
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                */
+                
+                
+                
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
                 con.Open();
@@ -136,7 +105,7 @@ namespace NOWYSekretariat
                 // insert command 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = @"INSERT INTO  [Table-uczen](Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca,  Pesel, Plec, Klasa, Grupa) VALUES(@Imie, @DrugieImie, @Nazwisko, @NazwiskoPanienskie, @ImieMatki, @ImieOjca, @Pesel,@Plec,@Klasa, @Grupa)";
+                cmd.CommandText = @"INSERT INTO  [Table-uczen](Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, DataUrodzenia,  Pesel, Plec, Klasa, Grupa) VALUES(@Imie, @DrugieImie, @Nazwisko, @NazwiskoPanienskie, @ImieMatki, @ImieOjca, @DataUrodzenia, @Pesel,@Plec,@Klasa, @Grupa)";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
                 cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
@@ -144,14 +113,13 @@ namespace NOWYSekretariat
                 cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
                 cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
                 cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
-               // cmd.Parameters.AddWithValue("@DataUrodzenia", data_urodzenia.Text);
+               cmd.Parameters.AddWithValue("@DataUrodzenia", data_urodzenia.Text);
                 cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
                 cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
                 cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
                 cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("wyslano");
 
                 con.Close();
                 MessageBox.Show("zamknieto");
@@ -822,6 +790,11 @@ namespace NOWYSekretariat
             catch (Exception ex)
             { }
             MessageBox.Show("Pliki znajduja sie w katalogu bin/Debug w folderze z programem ");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine(data_urodzenia.Text);
         }
 
 
