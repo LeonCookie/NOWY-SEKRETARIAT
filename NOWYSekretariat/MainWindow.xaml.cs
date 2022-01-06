@@ -78,13 +78,14 @@ namespace NOWYSekretariat
             con.Close();
         }
 
-        
-        
+
+
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+       
 
         private void buttonSend_Click(object sender, RoutedEventArgs e)
         {
@@ -92,62 +93,91 @@ namespace NOWYSekretariat
 
             if (!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text) && textbox_uczen_Pesel.Text.Length == 11) //wymagane pola nie sa puste
             {
-
-
                 /*
-                 string connectionstring = "NOWYSekretariat.Properties.Settings.dbUczenConnection";
-                 SqlConnection con = new SqlConnection(connectionstring);
-                 con.Open(); 
-                 SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[Table-uczen] ([Id], [Imie], [DrugieImie], [Nazwisko], [NazwiskoPanienskie], [ImieMatki], [ImieOjca], [DataUrodzenia], [Pesel], [Plec], [Klasa], [Grupa]) VALUES (4, '" + textbox_uczen_imie.Text + "','" + textbox_uczen_drugieImie.Text + "','" + textbox_uczen_nazwisko.Text + "','" + textbox_uczen_nazwiskoPanienskie.Text + "','" + textbox_uczen_ImieMatki.Text + "','" + textbox_uczen_ImieOjca.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_grupa.Text + "'))", con);
-                 SqlDataAdapter da = new SqlDataAdapter(cmd);
-                 DataSet ds = new DataSet();
-                 da.Fill(ds)
-                */
-                //a.Text + "','" + textbox_uczen_Pesel.Text + "','" + combobox_uczen_plec.Text + "','" + combobox_uczen_klasa.Text + "','" + combobox_uczen_gru
-                //INSERT INTO [dbo].[Table-uczen] ([Id], [Imie], [DrugieImie], [Nazwisko], [NazwiskoPanienskie], [ImieMatki], [ImieOjca], [DataUrodzenia], [Pesel], [Plec], [Klasa], [Grupa]) VALUES (4, N'Adam', N'Edward', N'Kaczyn', N'Karolak', N'Magdalena', N'Mateusz', N'2005-02-21', N'12345678901', N'Mezczyzna', N'1-Pr', N'Hiszpanski')
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ConfigurationManager.ConnectionStrings["NOWYSekretariat.Properties.Settings.dbUczenConnection"].ConnectionString;
 
-              /*  
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Leon\source\repos\NOWYSekretariat\NOWYSekretariat\Database1.mdf;Integrated Security=True");
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(con.ConnectionString))
+                    using (SqlCommand cmd = connection.CreateCommand())
+                    {
+                        connection.Open();
+                        cmd.CommandText = @"Insert into Table - uczen(Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca, DataUrodzenia, Pesel, Plec, Klasa, Grupa) values(@Imie, @DrugieImie, @Nazwisko, @NazwiskoPanienskie, @ImieMatki, @ImieOjca, @DataUrodzenia, @Pesel,@Plec,@Klasa, @Grupa)";
+                        cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
+                        cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
+                        cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
+                        cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
+                        cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
+                        cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
+                        cmd.Parameters.AddWithValue("@DataUrodzenia", data_urodzenia.Text);
+                        cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
+                        cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
+                        cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
+                        cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
+                        
+                        
+                        
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("cmd");
+                        binddatagrip();
+                        MessageBox.Show("Wyslano");
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                */
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True";
                 con.Open();
+
+                // insert command 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = @"insert into [Table-uczen](Imie,DrugieImie,Nazwisko,NazwiskoPanienskie,ImieMatki,ImieOjca,DataUrodzenia,Pesel,Plec,Klasa, Grupa) values(@Imie,@DrugieImie,@Nazwisko,@NazwiskoPanienskie,@ImieMatki,@ImieOjca,@DataUrodzenia,@Pesel,@Klasa,@Grupa)";
-                cmd.Parameters.Add(new SqlParameter("Imie", textbox_uczen_imie.Text));
-                cmd.Parameters.Add(new SqlParameter("DrugieImie", textbox_uczen_drugieImie.Text));
-                cmd.Parameters.Add(new SqlParameter("Nazwisko", textbox_uczen_nazwisko.Text));
-                cmd.Parameters.Add(new SqlParameter("NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text));
-                cmd.Parameters.Add(new SqlParameter("ImieMatki", textbox_uczen_ImieMatki.Text));
-                cmd.Parameters.Add(new SqlParameter("ImieOjca", textbox_uczen_ImieOjca.Text));
-                cmd.Parameters.Add(new SqlParameter("DataUrodzenia", data_urodzenia.Text));
-                cmd.Parameters.Add(new SqlParameter("Pesel", textbox_uczen_Pesel.Text));
-                cmd.Parameters.Add(new SqlParameter("Klasa", combobox_uczen_klasa.Text));
-                cmd.Parameters.Add(new SqlParameter("Grupa", combobox_uczen_grupa.Text));
+                cmd.Connection = con;
+                cmd.CommandText = @"INSERT INTO  [Table-uczen](Imie, DrugieImie, Nazwisko, NazwiskoPanienskie, ImieMatki, ImieOjca,  Pesel, Plec, Klasa, Grupa) VALUES(@Imie, @DrugieImie, @Nazwisko, @NazwiskoPanienskie, @ImieMatki, @ImieOjca, @Pesel,@Plec,@Klasa, @Grupa)";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Imie", textbox_uczen_imie.Text);
+                cmd.Parameters.AddWithValue("@DrugieImie", textbox_uczen_drugieImie.Text);
+                cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
+                cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
+                cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
+                cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
+               // cmd.Parameters.AddWithValue("@DataUrodzenia", data_urodzenia.Text);
+                cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
+                cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
+                cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
+                cmd.Parameters.AddWithValue("@Grupa", combobox_uczen_grupa.Text);
+
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Dodano dane");
+                MessageBox.Show("wyslano");
+
+                con.Close();
+                MessageBox.Show("zamknieto");
                 binddatagrip();
-                */
-
-
-
-                
 
             }
             else
             {
                 MessageBox.Show("Uzupełnij wymagane pola: Imie,Nazwisko,Pesel(musi posiadac 11 cyfr),Klasa");
             }
-
-
         }
+
+
+
+        
         private void buttonSendnauczyciel_Click(object sender, RoutedEventArgs e)
         {
-           /* if (!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text) && textbox_uczen_Pesel.Text.Length == 11) //wymagane pola nie sa puste
+            if (!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text) && textbox_uczen_Pesel.Text.Length == 11) //wymagane pola nie sa puste
             {
+
             }
             else
             {
 
             }
-           */
+           
         }
 
         private void buttonSendobsluga_Click(object sender, RoutedEventArgs e)
