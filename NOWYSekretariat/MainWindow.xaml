@@ -350,10 +350,12 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button x:Name="btn_daneUczniowie" Content="Prześlij" Grid.Column="2" HorizontalAlignment="Left" Margin="210,34,0,0" VerticalAlignment="Top" Width="76" Click="btn_daneUczniowie_Click"/>
-                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="10,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="195"><Run Text="Prześlij dane do pliku txt"/><InlineUIContainer>
+                    <Button x:Name="btn_daneUczniowie" Content="Prześlij" Grid.Column="2" HorizontalAlignment="Left" Margin="747,35,0,0" VerticalAlignment="Top" Width="76" Click="btn_daneUczniowie_Click"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="704,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="195"><Run Text="Prześlij dane do pliku txt"/><InlineUIContainer>
                             <TextBlock Height="3" TextWrapping="Wrap" Text="TextBlock" Width="54"/>
                         </InlineUIContainer></TextBlock>
+                    <TextBox x:Name="dane_uczen_search" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="dane_uczen_search_TextChanged"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="58,10,0,0" TextWrapping="Wrap" Text="Szukaj" VerticalAlignment="Top" RenderTransformOrigin="-3.212,0.75"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Dane-Nauczyciel">
