@@ -112,36 +112,52 @@
                 </TabItem.Background>
                 <Grid Background="#FF0719FF">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="438*"/>
+                        <ColumnDefinition Width="27*"/>
+                        <ColumnDefinition Width="411*"/>
                         <ColumnDefinition Width="493*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="buttonSendnauczyciel" Content="Wyślij" HorizontalAlignment="Left" Margin="330,733,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Click="buttonSendnauczyciel_Click" />
+                    <Button x:Name="buttonSendnauczyciel" Content="Wyślij" HorizontalAlignment="Left" Margin="303,733,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.488,0.154" Click="buttonSendnauczyciel_Click" Grid.Column="1" />
 
-                    <TextBox x:Name="textbox_nauczyciel_imie" HorizontalAlignment="Left" Margin="250,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_imie_PreviewKeyDown" Grid.ColumnSpan="2" />
-                    <TextBox x:Name="textbox_nauczyciel_drugieImie" HorizontalAlignment="Left" Margin="250,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_drugieImie_PreviewKeyDown" Grid.ColumnSpan="2" />
-                    <TextBox x:Name="textbox_nauczyciel_nazwisko" HorizontalAlignment="Left" Margin="250,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_nazwisko_PreviewKeyDown" Grid.ColumnSpan="2" />
-                    <TextBox x:Name="textbox_nauczyciel_nazwiskoPanienskie" HorizontalAlignment="Left" Margin="250,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_nazwiskoPanienskie_PreviewKeyDown" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="textbox_nauczyciel_ImieMatki" HorizontalAlignment="Left" Margin="250,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieMatki_PreviewKeyDown" Grid.ColumnSpan="2"/>
-                    <TextBox x:Name="textbox_nauczyciel_ImieOjca" HorizontalAlignment="Left" Margin="250,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieOjca_PreviewKeyDown" Grid.ColumnSpan="2"/>
-                    <DatePicker x:Name="data_urodzenia_nauczyciel" HorizontalAlignment="Left" Margin="250,172,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2"/>
-                    <ComboBox x:Name="combobox_nauczyciel_plec" HorizontalAlignment="Left" Margin="250,363,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2">
+                    <TextBox x:Name="textbox_nauczyciel_imie" HorizontalAlignment="Left" Margin="223,31,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_imie_PreviewKeyDown" Grid.ColumnSpan="2" Grid.Column="1" />
+                    <TextBox x:Name="textbox_nauczyciel_drugieImie" HorizontalAlignment="Left" Margin="223,54,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_drugieImie_PreviewKeyDown" Grid.ColumnSpan="2" Grid.Column="1" />
+                    <TextBox x:Name="textbox_nauczyciel_nazwisko" HorizontalAlignment="Left" Margin="223,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_nazwisko_PreviewKeyDown" Grid.ColumnSpan="2" Grid.Column="1" />
+                    <TextBox x:Name="textbox_nauczyciel_nazwiskoPanienskie" HorizontalAlignment="Left" Margin="223,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_nazwiskoPanienskie_PreviewKeyDown" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_nauczyciel_ImieMatki" HorizontalAlignment="Left" Margin="223,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieMatki_PreviewKeyDown" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <TextBox x:Name="textbox_nauczyciel_ImieOjca" HorizontalAlignment="Left" Margin="223,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieOjca_PreviewKeyDown" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <DatePicker x:Name="data_urodzenia_nauczyciel" HorizontalAlignment="Left" Margin="223,172,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2" Grid.Column="1">
+                        <DatePicker.Resources>
+                            <Style TargetType="{x:Type DatePickerTextBox}">
+                                <Setter Property="IsReadOnly" Value="True"/>
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <TextBox x:Name="PART_TextBox"
+                                 Text="{Binding Path=SelectedDate, StringFormat='MM-dd-yyyy', 
+                                 RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
+                    <ComboBox x:Name="combobox_nauczyciel_plec" HorizontalAlignment="Left" Margin="223,363,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2" Grid.Column="1">
                         <ComboBoxItem>Mężczyzna</ComboBoxItem>
                         <ComboBoxItem>Kobieta</ComboBoxItem>
                     </ComboBox>
 
 
-                    <TextBlock HorizontalAlignment="Left" Margin="133,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Drugie Imie"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Imie"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,79,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top" Width="93"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="18"><Run Text="Nazwisko Panienskie"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,128,0,0" TextWrapping="Wrap" Text="Imie Matki" VerticalAlignment="Top" Width="86"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Imie Ojca"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Data urodzenia"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Pesel"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
-                    <TextBox x:Name="textbox_nauczyciel_Pesel" HorizontalAlignment="Left" Margin="250,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown" TextChanged="textbox_uczen_Pesel_TextChanged" Grid.ColumnSpan="2"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Wychowawstwo "/><LineBreak/><Run Text="Klasy"/><LineBreak/><Run/></TextBlock>
-                    <ComboBox x:Name="combobox_nauczyciel_WychowanieKlasy" HorizontalAlignment="Left" Margin="250,400,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2">
+                    <TextBlock HorizontalAlignment="Left" Margin="106,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Drugie Imie"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Imie"/><Run Text="*"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Nazwisko"/><Run Text="*"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Height="18" Grid.Column="1"><Run Text="Nazwisko Panienskie"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,128,0,0" TextWrapping="Wrap" Text="Imie Matki" VerticalAlignment="Top" Width="86" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Imie Ojca"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Data urodzenia"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Pesel"/><Run Text="*"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Plec"/><LineBreak/><Run/></TextBlock>
+                    <TextBox x:Name="textbox_nauczyciel_Pesel" HorizontalAlignment="Left" Margin="223,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Height="24"  MaxLength="11" PreviewKeyDown="textbox_uczen_Pesel_PreviewKeyDown" TextChanged="textbox_uczen_Pesel_TextChanged" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Wychowawstwo "/><LineBreak/><Run Text="Klasy"/><LineBreak/><Run/></TextBlock>
+                    <ComboBox x:Name="combobox_nauczyciel_WychowanieKlasy" HorizontalAlignment="Left" Margin="223,400,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="2" Grid.Column="1">
                         <ComboBoxItem>1-El</ComboBoxItem>
                         <ComboBoxItem>1-Pr</ComboBoxItem>
                         <ComboBoxItem>1-Mech</ComboBoxItem>
@@ -159,12 +175,27 @@
                         <ComboBoxItem>4-Mech</ComboBoxItem>
                         <ComboBoxItem>4-Chlod</ComboBoxItem>
                     </ComboBox>
-                    <Button x:Name="btn_nauczyciel_zdjecie" Content="Dodaj" HorizontalAlignment="Left" Margin="250,240,0,0" VerticalAlignment="Top" Width="46" Height="46" Click="btn_nauczyciel_zdjecie_Click"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.597,2.198"><Run Text="Przedmioty Nauczane"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="126,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Jakie Klasy Uczy"/><LineBreak/><Run/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,702,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="DataZatrudnienia"/><LineBreak/><Run/></TextBlock>
-                    <DatePicker x:Name="DataZatrudnienia_Nauczyciel" HorizontalAlignment="Left" Margin="250,698,0,0" VerticalAlignment="Top" Height="30" Width="216" Grid.ColumnSpan="2"/>
-                    <ListView x:Name="list_nauczuciel_przedmiotyNauczane" HorizontalAlignment="Left" Height="106" Margin="250,453,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2">
+                    <Button x:Name="btn_nauczyciel_zdjecie" Content="Dodaj" HorizontalAlignment="Left" Margin="223,240,0,0" VerticalAlignment="Top" Width="46" Height="46" Click="btn_nauczyciel_zdjecie_Click" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.597,2.198" Grid.Column="1"><Run Text="Przedmioty Nauczane"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="99,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Jakie Klasy Uczy"/><LineBreak/><Run/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,702,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Grid.Column="1"><Run Text="DataZatrudnienia"/><Run Text="*"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+                    <DatePicker x:Name="DataZatrudnienia_Nauczyciel" HorizontalAlignment="Left" Margin="223,698,0,0" VerticalAlignment="Top" Height="30" Width="216" Grid.ColumnSpan="2" Grid.Column="1">
+                        <DatePicker.Resources>
+                            <Style TargetType="{x:Type DatePickerTextBox}">
+                                <Setter Property="IsReadOnly" Value="True"/>
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <TextBox x:Name="PART_TextBox"
+                                 Text="{Binding Path=SelectedDate, StringFormat='MM-dd-yyyy', 
+                                 RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
+                    <ListView x:Name="list_nauczuciel_przedmiotyNauczane" HorizontalAlignment="Left" Height="106" Margin="223,453,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2" Grid.Column="1">
                         <ListView.Items>
                             <TextBlock>Angielski</TextBlock>
                             <TextBlock>Polski</TextBlock>
@@ -174,7 +205,7 @@
                             <TextBlock>Mechatronika</TextBlock>
                         </ListView.Items>
                     </ListView>
-                    <ListView x:Name="list_nauczuciel_jakieKlasy" HorizontalAlignment="Left" Height="106" Margin="250,564,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2">
+                    <ListView x:Name="list_nauczuciel_jakieKlasy" HorizontalAlignment="Left" Height="106" Margin="223,564,0,0" VerticalAlignment="Top" Width="216" SelectionMode="Multiple" Grid.ColumnSpan="2" Grid.Column="1">
                         <ListView.Items>
                             <ComboBoxItem>1-El</ComboBoxItem>
                             <ComboBoxItem>1-Pr</ComboBoxItem>
@@ -194,9 +225,9 @@
                             <ComboBoxItem>4-Chlod</ComboBoxItem>
                         </ListView.Items>
                     </ListView>
-                    <TextBlock HorizontalAlignment="Left" Margin="133,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93"><Run Text="Zdjecie"/><LineBreak/><Run/></TextBlock>
-                    <Image x:Name="image_nauczyciel" HorizontalAlignment="Left" Height="100" Margin="316,240,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.515,0.89"/>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="141,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Text="*- wymagane dane(reszty nie trzeba uzupełniać"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="106,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Zdjecie"/><LineBreak/><Run/></TextBlock>
+                    <Image x:Name="image_nauczyciel" HorizontalAlignment="Left" Height="100" Margin="289,240,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.515,0.89" Grid.Column="1"/>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="141,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Text="*- wymagane dane(reszty nie trzeba uzupełniać"/>
 
 
 
@@ -224,7 +255,22 @@
                     <TextBox x:Name="textbox_obsluga_nazwiskoPanienskie" HorizontalAlignment="Left" Margin="226,100,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_nazwiskoPanienskie_PreviewKeyDown" Grid.Column="1"/>
                     <TextBox x:Name="textbox_obsluga_ImieMatki" HorizontalAlignment="Left" Margin="226,126,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieMatki_PreviewKeyDown" Grid.Column="1"/>
                     <TextBox x:Name="textbox_obsluga_ImieOjca" HorizontalAlignment="Left" Margin="226,149,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" PreviewKeyDown="textbox_uczen_ImieOjca_PreviewKeyDown" Grid.Column="1"/>
-                    <DatePicker x:Name="data_urodzenia_obsluga" HorizontalAlignment="Left" Margin="226,172,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1"/>
+                    <DatePicker x:Name="data_urodzenia_obsluga" HorizontalAlignment="Left" Margin="226,172,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
+                        <DatePicker.Resources>
+                            <Style TargetType="{x:Type DatePickerTextBox}">
+                                <Setter Property="IsReadOnly" Value="True"/>
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <TextBox x:Name="PART_TextBox"
+                                 Text="{Binding Path=SelectedDate, StringFormat='MM-dd-yyyy', 
+                                 RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
                     <ComboBox x:Name="combobox_obsluga_plec" HorizontalAlignment="Left" Margin="226,230,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
                         <ComboBoxItem>Mężczyzna</ComboBoxItem>
                         <ComboBoxItem>Kobieta</ComboBoxItem>
@@ -247,7 +293,22 @@
                     <TextBlock HorizontalAlignment="Left" Margin="109,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"><Run Text="Opis stanowiska"/><LineBreak/><Run/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="109,439,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1"/>
                     <TextBlock HorizontalAlignment="Left" Margin="109,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" Grid.Column="1" RenderTransformOrigin="0.538,2.538"><Run Text="DataZatrudnienia"/><LineBreak/><Run/></TextBlock>
-                    <DatePicker x:Name="DataZatrudnienia_obsluga" HorizontalAlignment="Left" Margin="226,508,0,0" VerticalAlignment="Top" Height="30" Width="216" Grid.Column="1"/>
+                    <DatePicker x:Name="DataZatrudnienia_obsluga" HorizontalAlignment="Left" Margin="226,508,0,0" VerticalAlignment="Top" Height="30" Width="216" Grid.Column="1">
+                        <DatePicker.Resources>
+                            <Style TargetType="{x:Type DatePickerTextBox}">
+                                <Setter Property="IsReadOnly" Value="True"/>
+                                <Setter Property="Control.Template">
+                                    <Setter.Value>
+                                        <ControlTemplate>
+                                            <TextBox x:Name="PART_TextBox"
+                                 Text="{Binding Path=SelectedDate, StringFormat='MM-dd-yyyy', 
+                                 RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}}" />
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
                     <ComboBox x:Name="combobox_obsluga_Etat" HorizontalAlignment="Left" Margin="226,391,0,0" VerticalAlignment="Top" Width="216" Grid.Column="1">
                         <ComboBoxItem Content="Pełen"/>
                         <ComboBoxItem Content="Pół"/>

@@ -112,8 +112,8 @@ namespace NOWYSekretariat
                 cmd.Parameters.AddWithValue("@Nazwisko", textbox_uczen_nazwisko.Text);
                 cmd.Parameters.AddWithValue("@NazwiskoPanienskie", textbox_uczen_nazwiskoPanienskie.Text);
                 cmd.Parameters.AddWithValue("@ImieMatki", textbox_uczen_ImieMatki.Text);
-                cmd.Parameters.AddWithValue("@ImieOjca", textbox_uczen_ImieOjca.Text);
-               cmd.Parameters.AddWithValue("@DataUrodzenia", data_urodzenia.Text);
+                cmd.Parameters.AddWithValue("@ImieOjca", textbox_nauczyciel_ImieOjca.Text);
+               cmd.Parameters.AddWithValue("@DataUrodzenia",data_urodzenia.Text );
                 cmd.Parameters.AddWithValue("@Pesel", textbox_uczen_Pesel.Text);
                 cmd.Parameters.AddWithValue("@Plec", combobox_uczen_plec.Text);
                 cmd.Parameters.AddWithValue("@Klasa", combobox_uczen_klasa.Text);
@@ -122,14 +122,28 @@ namespace NOWYSekretariat
                 cmd.ExecuteNonQuery();
 
                 con.Close();
-                MessageBox.Show("zamknieto");
+                
                 binddatagrip();
+                textbox_uczen_imie.Text = String.Empty;
+                textbox_uczen_drugieImie.Text = String.Empty;
+                textbox_uczen_nazwisko.Text = String.Empty;
+                textbox_uczen_nazwiskoPanienskie.Text = String.Empty;
+                textbox_uczen_ImieMatki.Text = String.Empty;
+                textbox_uczen_ImieOjca.Text = String.Empty;
+                textbox_uczen_Pesel.Text = String.Empty;
+                data_urodzenia.Text = String.Empty;
+                combobox_uczen_plec.Text = String.Empty;
+                combobox_uczen_klasa.Text = String.Empty;
+                combobox_uczen_grupa.Text = String.Empty;
+                MessageBox.Show("Wysłano!");
 
             }
             else
             {
                 MessageBox.Show("Uzupełnij wymagane pola: Imie,Nazwisko,Pesel(musi posiadac 11 cyfr),Klasa");
             }
+            
+
         }
 
 
@@ -137,13 +151,13 @@ namespace NOWYSekretariat
         
         private void buttonSendnauczyciel_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(textbox_uczen_imie.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_nazwisko.Text) && !string.IsNullOrEmpty(textbox_uczen_Pesel.Text) && !string.IsNullOrEmpty(combobox_uczen_klasa.Text) && textbox_uczen_Pesel.Text.Length == 11) //wymagane pola nie sa puste
+            if (!string.IsNullOrEmpty(textbox_nauczyciel_imie.Text) && !string.IsNullOrEmpty(textbox_nauczyciel_nazwisko.Text) && !string.IsNullOrEmpty(textbox_nauczyciel_Pesel.Text)&& !string.IsNullOrEmpty(DataZatrudnienia_Nauczyciel.Text) && textbox_nauczyciel_Pesel.Text.Length == 11) //wymagane pola nie sa puste
             {
 
             }
             else
             {
-
+                MessageBox.Show("Uzupełnij wymagane pola: Imie,Nazwisko,Pesel(musi posiadac 11 cyfr),DataZatrudnienia");
             }
            
         }
