@@ -363,7 +363,7 @@ namespace NOWYSekretariat
         {
             checkIftekst(e);
         }
-
+        //
         private void textbox_uczen_nazwiskoPanienskie_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             checkIftekst(e);
