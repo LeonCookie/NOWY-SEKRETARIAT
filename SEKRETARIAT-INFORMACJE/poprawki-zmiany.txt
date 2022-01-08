@@ -1,0 +1,36 @@
+27.12.21- dodaje do visual studio server explorer(dla database)
+27.12.21(21.09)- zaczynamy od nowa. Nowy początek, nowy ja
+	(22:00)- proba zrozumienia baz danych w wpf i sprawienie by dane z text box wchodzily do tabeli, ktora o dziwo sie wyswietla.
+28.12.21(11:40)- udalo sie sprawic by pesel przyjmowail tylko 11 liczb, bez znakow i backsapce dziala- teraz wystarczy zmienic warunek dla textbox z znakami(np.imie)
+	(11.46)- dodałem opcje shift w wprowadzaniu(poprzednio była zablokowana)
+	(12.11)- sprawdzam czy pola (ktore musza byc uzupelniaone) sa uzupelniuone i czy pesel ma 11 cyfr(wiadomo)
+	(12.40)- ciagle proboje sprawic by dane z textbox zostaly dodane do tabeli( trzeba popracoac z insert into)
+	(13.28)- sprawdzam czy insert into zadziała
+	(13.40)- nie dziala, trzeba sprobowac inaczej
+	(14.40)- przypadkowo podczas zmian w tabeli ją usunolem przez i nie moge jej dodac na nowo
+	(15.00)- udalo mi sie naprawic database
+29.12.21(14.10)- stworzyłem dodatkowe tabele dla nauczycieli i pracownikow( musze pamietac by wyslac te tabele recznie na github, poniewaz nie wchodza z commitami!!!!!)
+	(18.20)- wszsytskie 3 tabele zostaly poprawnie stworzone i sie wyświetlają!
+	(18.28)-przerwa- nastpenie trzeba zrobic warunki sprawdzajace wypelione pola w nauczycielu i obsluga
+30.12.21- małe poprawki w gui
+02.01.21-(18.00) dodanie zdjecia działa
+	(?)-przygotowanie projektu w androdi( tlo wykonane, move bar z 3 figurami, na kazdym z nich beda inne dane( uczen- 1 strona, nauczyciel-2, oblsuga-3)
+	(21.35)- naprawilem blad, ktory sprawial, ze niby pesel mial zly typ w bazie dancyh( co ciekawe dotyczyulo sie to tylko tabeli uczen), ale teraz juz dziala
+	(22.00)- poprawki w gui
+03.01.21(9.20)-dodalem przyciski, ktore exportuja dane osob(uczen,nauczyciel,obsluga) do pliku txt
+	(10.25)- dalej probelm z insert data in database(chyba dokoncze najpierw andrida, a dopiero pozniej sproboje to naprawic, dalej nie wiem co z tym jest nie tak)
+	(.....)- ciagle mam problem z danymi, cala reszta działa bardzo dobrze
+06.01.21- chciałem stworzyć void w którym bym umiescił sprawdzanie wprowadzania dla textboxów, by kod był krótszy, jednakże coś nie chce działać.
+	(skupić sie na fukncjonalosci!)
+	-sukces, podczas probowania roznych sposob na insert values wyskoczył mi nowy rodzaj błedu :)
+	-INSERT DZIALA
+	-po wpisaniu danych odrazu pojawiaja sie w danych i mozna je pobrac, ale po wylaczeni programu wszystko wraca do poprzedniego stanu
+	-zmienic format datapicker(poniewaz w sql jest M/D/Y a w datapicker D/M/Y)
+	-^- zrobione
+	-po wyslaniu formularza wsyzstkie textboxy robią sie puste
+	-zmien w sql typ i klucz w tabeli nauczyciel i obsluga(chodzi o datapicker) i zrobic insert dla nauczyciela i obslugi
+	-musialem sprawic by wielokrotne wybory w listview u nauczyciela weszly do jendego stringa
+(07.01.21) - udało mi sie stowrzyc jedną funkcje dla wpisywania tesktu i liczb(optymalizacja kodu/ kod krótszy)
+	   -przerwa by naprawic projekt w android studio
+	
+	
